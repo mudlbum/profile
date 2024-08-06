@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bumyol Lee Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="#">BUMYOL LEE</a></h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button id="darkModeToggle">Dark Mode</button>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>DESIGNING EXPERIENCE</h1>
+            <p>Crafting digital experiences with a heart for innovation and a soul for humanity</p>
+            <button class="hero-button">READ MORE</button>
+        </div>
+    </section>
+    <section class="profile">
+        <div class="profile-picture">
+            <img src="./images/profile.png" alt="Profile Picture">
+        </div>
+        <div class="profile-info">
+            <h2>BUMYOL LEE</h2>
+            <p id="typewriter"></p>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>As a seasoned UX designer with extensive experience across diverse industries, I specialize in crafting unique and intuitive user experiences. I can help corporations create seamless, engaging, and impactful designs that resonate with their users, enhancing satisfaction and driving success</p>
+    </section>
+    <section id="portfolio" class="portfolio">
+        <h2>Portfolio</h2>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <img src="./images/portfolio1.jpg" alt="Portfolio Item 1">
+                <img src="./images/portfolio2.jpg" alt="Portfolio Item 2">
+                <img src="./images/portfolio3.jpg" alt="Portfolio Item 3">
+            </div>
+            <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </section>
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skill-bar">
+            <div class="skill-bar-fill" data-percentage="90%">HTML</div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-bar-fill" data-percentage="80%">CSS</div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-bar-fill" data-percentage="70%">JavaScript</div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-bar-fill" data-percentage="95%">Photoshop</div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-bar-fill" data-percentage="90%">Illustrator</div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-bar-fill" data-percentage="85%">Indesign</div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-bar-fill" data-percentage="90%">Audition</div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-bar-fill" data-percentage="88%">Lightroom</div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-bar-fill" data-percentage="85%">Premier Pro</div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-bar-fill" data-percentage="75%">Python</div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>Email: mudlbum@gmail.com</p>
+    </section>
+    <button id="backToTop" onclick="scrollToTop()">&#8679;</button>
+    <script src="./script.js"></script>
+</body>
+</html>
