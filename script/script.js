@@ -116,7 +116,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Chatbox functionality
-    const API_KEY = "sk-QGfBdHBsG-AaVx3DxHM5xFWHcoAcY2BCgEd-Gx0PmXT3BlbkFJzsAxPLHP5BLvWyzJlVxULTB6KeGPj-TxAL89c5OmIA";
+    require('dotenv').config();
+
+    const apiKey = process.env.API_KEY;
     document.getElementById("chatbox-send").addEventListener("click", function() {
         sendMessage();
     });
@@ -140,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${API_KEY}`
+                'Authorization': `Bearer ${apiKey}`
             },
             body: JSON.stringify({
                 model: "gpt-3.5-turbo",
