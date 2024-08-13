@@ -645,7 +645,7 @@ body.dark-mode #backToTop:hover {
     }
     
     .about-text p {
-        font-size: 2rem; /* Adjust this value as needed */
+        font-size: 0.8rem; /* Adjust this value as needed */
         line-height: 4;
         margin: 0;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
