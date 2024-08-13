@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Chatbox functionality
-    const API_KEY = "sk-YOUR_API_KEY"; // Ensure your API key is safe
+    const API_KEY = "sk-QGfBdHBsG-AaVx3DxHM5xFWHcoAcY2BCgEd-Gx0PmXT3BlbkFJzsAxPLHP5BLvWyzJlVxULTB6KeGPj-TxAL89c5OmIA";
     document.getElementById("chatbox-send").addEventListener("click", function() {
         sendMessage();
     });
