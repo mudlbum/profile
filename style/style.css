@@ -11,6 +11,7 @@
     --transition-duration: 0.3s; 
     --content-width-desktop: 80%;
     --content-width-mobile: 90%;
+    font-size: 1.1rem;
     scroll-behavior: smooth !important;
 }
 
@@ -52,7 +53,7 @@ header nav a {
     color: white;
     text-decoration: none;
     font-family: 'Oswald', sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     transition: font-size var(--transition-duration);
 }
 
@@ -546,6 +547,9 @@ body.dark-mode #backToTop:hover {
         display: inline-block;
         vertical-align: bottom;
     }
+    :root {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -557,6 +561,9 @@ body.dark-mode #backToTop:hover {
         text-align: center;
         padding: 10px;
         width: var(--content-width-mobile);
+    }
+    :root {
+        font-size: .9rem;
     }
     #darkModeToggle {
         padding: 8px 16px; /* Reduce padding */
@@ -634,10 +641,14 @@ body.dark-mode #backToTop:hover {
 
     .about-text {
         width: 100%; /* Makes the text full width */
-    }
 
+    }
+    
     .about-text p {
-        line-height: 1.5; /* Adjusts line spacing for readability on small screens */
+        font-size: 2rem; /* Adjust this value as needed */
+        line-height: 4;
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 }
 
