@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bumyol Lee Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1><a href="#">BUMYOL LEE</a></h1>
         <nav>
             <a href="#about">About</a>
             <a href="#portfolio">Portfolio</a>
@@ -18,76 +18,219 @@
         </nav>
         <button id="darkModeToggle">Dark Mode</button>
     </header>
+    <section class="profile">
+        <div class="profile-info">
+            <p id="typewriter"></p><span id="cursor">|</span>
+        </div>
+    </section>
     <section class="hero">
         <div class="hero-content">
             <h1>DESIGNING EXPERIENCE</h1>
             <p>Crafting digital experiences with a heart for innovation and a soul for humanity</p>
-            <button class="hero-button">READ MORE</button>
+            <a href="./resume/Resume.pdf" target="_blank">
+                <button class="hero-button">Resume</button>
+            </a>
         </div>
     </section>
-    <section class="profile">
-        <div class="profile-picture">
-            <img src="./images/profile.png" alt="Profile Picture">
-        </div>
-        <div class="profile-info">
-            <h2>BUMYOL LEE</h2>
-            <p id="typewriter"></p>
-        </div>
-    </section>
+
     <section id="about" class="about">
         <h2>About Me</h2>
-        <p>As a seasoned UX designer with extensive experience across diverse industries, I specialize in crafting unique and intuitive user experiences. I can help corporations create seamless, engaging, and impactful designs that resonate with their users, enhancing satisfaction and driving success</p>
+        <div class="about-content">
+            <div class="profile-picture">
+                <img src="./images/profilepicture.png" alt="Profile Picture">
+            </div>
+            <div class="about-text">
+                <p>
+                    Hi, I’m Bumyol Lee—Dave to most. As a UX designer, I specialize in creating intuitive and impactful digital experiences. My work spans various industries, where I focus on making interactions both seamless and visually engaging.
+    
+                    I’m passionate about solving design challenges creatively, always with the user in mind. If you’re looking for a designer who blends innovation with user-centered thinking, let’s connect!
+                </p>
+            </div>
+        </div>
     </section>
     <section id="portfolio" class="portfolio">
         <h2>Portfolio</h2>
-        <div class="carousel">
-            <div class="carousel-inner">
-                <img src="./images/portfolio1.jpg" alt="Portfolio Item 1">
-                <img src="./images/portfolio2.jpg" alt="Portfolio Item 2">
-                <img src="./images/portfolio3.jpg" alt="Portfolio Item 3">
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <a href="./projects/5Senses.pdf" target="_blank">
+                    <img src="./images/portfolio1.png" alt="Portfolio Item 1">
+                </a>
             </div>
-            <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
-            <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+            <div class="portfolio-item">
+                <a href="./projects/Bybell.pdf" target="_blank">
+                    <img src="./images/portfolio2.png" alt="Portfolio Item 2">
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="./projects/Collage.pdf" target="_blank">
+                    <img src="./images/portfolio3.png" alt="Portfolio Item 3">
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="./projects/dialUI.pdf" target="_blank">
+                    <img src="./images/portfolio4.png" alt="Portfolio Item 4">
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="./projects/flyr1.pdf" target="_blank">
+                    <img src="./images/portfolio5.png" alt="Portfolio Item 5">
+                </a>
+            </div>
+            <!-- Fix starts here -->
+            <div class="portfolio-item">
+                <a href="./projects/Magazine assignment INM101_Bumyol_Lee.pdf" target="_blank">
+                    <img src="./images/portfolio6.png" alt="Portfolio Item 6">
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="./projects/magneticChargerDesignApplication.pdf" target="_blank">
+                    <img src="./images/portfolio7.png" alt="Portfolio Item 7">
+                </a>
+            </div>            
+            <div class="portfolio-item">
+                <a href="./projects/PSA.pdf" target="_blank">
+                    <img src="./images/portfolio8.png" alt="Portfolio Item 8">
+                </a>
+            </div>            
+            <div class="portfolio-item">
+                <a href="./projects/Reflections of Time.pdf" target="_blank">
+                    <img src="./images/portfolio9.png" alt="Portfolio Item 9">
+                </a>
+            </div>            
+            <div class="portfolio-item">
+                <a href="./projects/Series.pdf" target="_blank">
+                    <img src="./images/portfolio10.png" alt="Portfolio Item 10">
+                </a>
+            </div>            
+            <div class="portfolio-item">
+                <a href="./projects/SoundRecreationProject.mp4" target="_blank">
+                    <img src="./images/portfolio11.png" alt="Portfolio Item 11">
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="./projects/GAME_Sound.mp3" target="_blank">
+                    <img src="./images/portfolio12.png" alt="Portfolio Item 12">
+                </a>
+            </div>
         </div>
     </section>
+    
     <section id="skills" class="skills">
         <h2>Skills</h2>
-        <div class="skill-bar">
-            <div class="skill-bar-fill" data-percentage="90%">HTML</div>
+    
+        <div class="skill">
+            <div class="skill-bar-container">
+                <div class="skill-bar-fill" data-percentage="90%">HTML</div>
+            </div>
+            <div class="skill-logo">
+                <img src="./images/html-xxl.png" alt="HTML Logo">
+            </div>
         </div>
-        <div class="skill-bar">
-            <div class="skill-bar-fill" data-percentage="80%">CSS</div>
+    
+        <div class="skill">
+            <div class="skill-bar-container">
+                <div class="skill-bar-fill" data-percentage="80%">CSS</div>
+            </div>
+            <div class="skill-logo">
+                <img src="./images/CSS_logo.png" alt="CSS Logo">
+            </div>
         </div>
-        <div class="skill-bar">
-            <div class="skill-bar-fill" data-percentage="70%">JavaScript</div>
+    
+        <div class="skill">
+            <div class="skill-bar-container">
+                <div class="skill-bar-fill" data-percentage="70%">JavaScript</div>
+            </div>
+            <div class="skill-logo">
+                <img src="./images/javascript.png" alt="JavaScript Logo">
+            </div>
         </div>
-        <div class="skill-bar">
-            <div class="skill-bar-fill" data-percentage="95%">Photoshop</div>
+    
+        <div class="skill">
+            <div class="skill-bar-container">
+                <div class="skill-bar-fill" data-percentage="95%">Photoshop</div>
+            </div>
+            <div class="skill-logo">
+                <img src="./images/photoshop.png" alt="Photoshop Logo">
+            </div>
         </div>
-        <div class="skill-bar">
-            <div class="skill-bar-fill" data-percentage="90%">Illustrator</div>
+    
+        <div class="skill">
+            <div class="skill-bar-container">
+                <div class="skill-bar-fill" data-percentage="90%">Illustrator</div>
+            </div>
+            <div class="skill-logo">
+                <img src="./images/illustrator.png" alt="Illustrator Logo">
+            </div>
         </div>
-        <div class="skill-bar">
-            <div class="skill-bar-fill" data-percentage="85%">Indesign</div>
+    
+        <div class="skill">
+            <div class="skill-bar-container">
+                <div class="skill-bar-fill" data-percentage="85%">Indesign</div>
+            </div>
+            <div class="skill-logo">
+                <img src="./images/indesign.png" alt="Indesign Logo">
+            </div>
         </div>
-        <div class="skill-bar">
-            <div class="skill-bar-fill" data-percentage="90%">Audition</div>
+    
+        <div class="skill">
+            <div class="skill-bar-container">
+                <div class="skill-bar-fill" data-percentage="90%">Audition</div>
+            </div>
+            <div class="skill-logo">
+                <img src="./images/audition.png" alt="Audition Logo">
+            </div>
         </div>
-        <div class="skill-bar">
-            <div class="skill-bar-fill" data-percentage="88%">Lightroom</div>
+    
+        <div class="skill">
+            <div class="skill-bar-container">
+                <div class="skill-bar-fill" data-percentage="88%">Lightroom</div>
+            </div>
+            <div class="skill-logo">
+                <img src="./images/lightroom.png" alt="Lightroom Logo">
+            </div>
         </div>
-        <div class="skill-bar">
-            <div class="skill-bar-fill" data-percentage="85%">Premier Pro</div>
+    
+        <div class="skill">
+            <div class="skill-bar-container">
+                <div class="skill-bar-fill" data-percentage="92%">Premier Pro</div>
+            </div>
+            <div class="skill-logo">
+                <img src="./images/premierpro.png" alt="Premier Pro Logo">
+            </div>
         </div>
-        <div class="skill-bar">
-            <div class="skill-bar-fill" data-percentage="75%">Python</div>
+    
+        <div class="skill">
+            <div class="skill-bar-container">
+                <div class="skill-bar-fill" data-percentage="75%">Python</div>
+            </div>
+            <div class="skill-logo">
+                <img src="./images/python.png" alt="Python Logo">
+            </div>
         </div>
+    
     </section>
+    
     <section id="contact" class="contact">
         <h2>Contact</h2>
-        <p>Email: mudlbum@gmail.com</p>
+        <div class="contact-icons">
+            <a href="mailto:mudlbum@gmail.com" target="_blank">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/bumyol-lee-380124323/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+                
+        <!-- Chatbox -->
+        <div id="chatbox">
+            <div id="chatbox-messages"></div>
+            <input type="text" id="chatbox-input" placeholder="Ask me anything about Bumyol aka Dave">
+            <button id="chatbox-send">Send</button>
+        </div>
     </section>
-    <button id="backToTop" onclick="scrollToTop()">&#8679;</button>
-    <script src="./script.js"></script>
+    <section>
+        <button id="backToTop" onclick="scrollToTop()">TOP</button>
+    </section>
+    <script src="./script/script.js"></script>
 </body>
 </html>

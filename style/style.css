@@ -1,0 +1,638 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@300;400;500&display=swap');
+
+/*primary settings*/
+:root {
+    --bg-color: #d1d1d1;
+    --text-color: #313131;
+    --primary-color: #838383;
+    --secondary-color: #525252;
+    --accent-color: #b4b4b4;
+    --transition-duration: 0.3s; 
+    --content-width-desktop: 80%;
+    --content-width-mobile: 90%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background: var(--primary-color);
+    color: white;
+    width: var(--content-width-desktop);
+    margin: 0 auto;
+    transition: padding var(--transition-duration), background var(--transition-duration), width var(--transition-duration);
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    transition: font-size var(--transition-duration);
+}
+
+header nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    transition: font-size var(--transition-duration);
+}
+
+
+
+/* Dark Mode Toggle Button Styles */
+#darkModeToggle {
+    background: var(--secondary-color);
+    border: none;
+    color: rgb(202, 202, 202);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color var(--transition-duration), color var(--transition-duration), font-size var(--transition-duration);
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    border-radius: 20px; /* Rounded corners */
+}
+
+#darkModeToggle:hover {
+    background-color: rgb(197, 197, 197);
+    color: var(--secondary-color);
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+#typewriter {
+    font-family: 'Oswald', sans-serif;
+    font-size: 9rem;
+    display: inline;
+}
+#cursor {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 9rem;
+    animation: blink 0.7s step-end infinite;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: 10px;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+button {
+    background: var(--secondary-color);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color var(--transition-duration), color var(--transition-duration), font-size var(--transition-duration);
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: white;
+    color: var(--secondary-color);
+}
+
+
+
+.hero {
+    position: relative;
+    background: var(--primary-color);
+    background-image: url('../images/heroImg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    width: var(--content-width-desktop);
+    margin: 0 auto;
+    transition: padding var(--transition-duration), color var(--transition-duration), width var(--transition-duration), background-color var(--transition-duration);
+    height: 600px; /* Ensure the hero section takes up the full viewport height */
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center; 
+}
+
+.hero-content {
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    transition: padding var(--transition-duration);
+    position: absolute; /* Positioning absolute within the hero section */
+    bottom: 150px; /* Stick the content to the bottom */
+    margin-bottom: 20px; /* Optional: adds space between content and bottom of section */
+    text-align: center; /* Ensure the content remains centered */
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    transition: font-size var(--transition-duration);
+}
+
+.hero-content p {
+    font-size: 1rem;
+    margin: 20px 0;
+    transition: font-size var(--transition-duration);
+}
+
+.hero-button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color var(--transition-duration), font-size var(--transition-duration);
+    font-size: 1rem;
+}
+
+.hero-button:hover {
+    background-color: var(--accent-color);
+}
+
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    height: 800px;
+    padding: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    width: var(--content-width-desktop);
+    margin: 0 auto;
+    transition: padding var(--transition-duration), width var(--transition-duration), background-color var(--transition-duration);
+}
+
+.about {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.about h2 {
+    margin-bottom: 20px; /* Adds some space between the heading and the content */
+    width: 100%; /* Ensure the heading takes up the full width */
+    text-align: left; /* Left-align the heading */
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px; /* Limits the maximum width of the content */
+    text-align: left; /* Aligns text to the left within the about-text */
+}
+
+.profile-picture {
+    flex: 0 0 400px; /* Makes the profile picture 150px wide */
+    margin-right: 100px; /* Adds some space between the picture and the text */
+}
+
+.profile-picture img {
+    width: 100%;
+    height: auto;
+}
+
+.about-text {
+    flex: 1; /* Takes up the remaining space */
+}
+
+.about-text p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 4;
+    margin: 0;
+}
+
+
+section {
+    padding: 50px;
+    width: var(--content-width-desktop);
+    margin: 0 auto;
+    transition: padding var(--transition-duration), width var(--transition-duration), background-color var(--transition-duration);
+}
+
+section:nth-child(odd) {
+    background-color: #e0e0e0;
+}
+
+section:nth-child(even) {
+    background-color: #cfcfcf;
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #444444b7;
+    --secondary-color: #616161;
+    --accent-color: #8a8a8a;
+}
+
+body.dark-mode {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+body.dark-mode header {
+    background: var(--primary-color);
+}
+
+body.dark-mode .hero {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    background-image: url(../images/heroImgDark.jpg);
+}
+
+body.dark-mode .hero-content {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .profile {
+    background-color: var(--bg-color);
+}
+
+body.dark-mode section:nth-child(odd) {
+    background-color: #333333;
+}
+
+body.dark-mode section:nth-child(even) {
+    background-color: #444444;
+}
+
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    transition: max-width var(--transition-duration);
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-inner img {
+    width: 100%;
+    transition: width var(--transition-duration);
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: font-size var(--transition-duration), background var(--transition-duration);
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+/* Skill Bar Styles */
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between each skill item */
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure skill bar and logo are separated */
+}
+
+.skill-bar-container {
+    width: 70%;
+    background: #ddd;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-right: 20px; /* Space between skill bar and logo */
+}
+
+.skill-bar-fill {
+    height: 30px;
+    line-height: 30px;
+    background: var(--primary-color);
+    color: white;
+    text-align: right;
+    padding-right: 10px;
+    width: 0; /* This will be filled based on data-percentage */
+    transition: width 2s ease;
+    border-radius: 25px 0 0 25px; /* Rounded corners only on the left */
+}
+
+.skill-logo {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-logo img {
+    max-width: 60px; /* Adjust the logo size */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.skill-logo img:hover {
+    transform: scale(1.1); /* Slightly enlarge logo on hover */
+}
+
+body.dark-mode .skill-bar {
+    background: #555;
+}
+
+body.dark-mode .skill-bar-fill {
+    background: var(--primary-color);
+}
+
+/* Back-to-Top Button Styles */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Hidden by default */
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1000;
+    transition: background var(--transition-duration), color var(--transition-duration), font-size var(--transition-duration);
+}
+
+#backToTop.show {
+    display: block;
+}
+
+#backToTop:hover {
+    background: white;
+    color: var(--accent-color);
+}
+
+body.dark-mode #backToTop {
+    background: var(--primary-color);
+    color: var(--text-color);
+}
+
+body.dark-mode #backToTop:hover {
+    background: var(--text-color);
+    color: var(--primary-color);
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+}
+
+#chatbox {
+    align-self: center; /* Centers the chatbox within the contact section */
+    width: 90%;
+    max-width: 720px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#chatbox-messages {
+    height: 200px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+#chatbox-messages p {
+    margin: 5px 0;
+    padding: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+}
+
+#chatbox-input {
+    width: calc(100% - 120px);
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#chatbox-send {
+    padding: 10px 20px;
+    border: none;
+    background-color: #535353;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#chatbox-send:hover {
+    background-color: #979797;
+}
+
+
+/* Portfolio Grid Styles */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns by default */
+    gap: 20px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+.portfolio-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between icons */
+}
+
+.contact-icons a {
+    color: #525252; /* Initial color (which will be grayscaled) */
+    font-size: 3rem; /* Larger icon size */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease, filter 0.3s ease; /* Smooth transition */
+    filter: grayscale(100%); /* Apply grayscale effect */
+}
+
+.contact-icons a:hover {
+    filter: none; /* Remove grayscale on hover */
+    color: #313131; /* Optional: Change color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    }
+    #typewriter {
+        font-family: 'Oswald', sans-serif;
+        font-size: 8rem;
+        height: 200px;
+    }
+    #cursor {
+        font-weight: bold;
+        font-size: 8rem;
+        animation: blink 0.7s step-end infinite;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+}
+
+@media (max-width: 992px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    }
+    #typewriter {
+        font-family: 'Oswald', sans-serif;
+        font-size: 5rem;
+        height: 180px;
+    }
+    #cursor {
+        font-weight: bold;
+        font-size: 5rem;
+        animation: blink 0.7s step-end infinite;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+        width: var(--content-width-mobile);
+    }
+
+    .hero {
+        width: var(--content-width-mobile);
+    }
+
+    .profile {
+        flex-direction: column;
+        padding: 20px;
+        width: var(--content-width-mobile);
+    }
+
+    .profile-info {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    section {
+        padding: 20px;
+        width: var(--content-width-mobile);
+    }
+
+    header h1 a {
+        font-size: 1.5rem;
+    }
+
+    header nav a {
+        font-size: 0.9rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .hero-button {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+    #typewriter {
+        font-family: 'Oswald', sans-serif;
+        font-size: 2.5rem;
+        height: 120px;
+    }
+    #cursor {
+        font-weight: bold;
+        font-size: 2.5rem;
+        animation: blink 0.7s step-end infinite;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns, smaller thumbnail */
+        gap: 10px; /* Reduce gap between items */
+    }
+
+    .portfolio-item img {
+        border-radius: 5px;
+    }
+    #typewriter {
+        font-family: 'Oswald', sans-serif;
+        font-size: 2rem;
+        height: 90px;
+    }
+    #cursor {
+        font-weight: bold;
+        font-size: 2rem;
+        animation: blink 0.7s step-end infinite;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+}
