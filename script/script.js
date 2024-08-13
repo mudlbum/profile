@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('Error:', error);
-            displayMessage("ChatGPT", "Sorry, something went wrong. Please try again later.");
+            displayMessage("ChatGPT", "Sorry, I cannot answer you at the moment. Please try again later.");
         });
     }
 
