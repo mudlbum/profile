@@ -11,10 +11,12 @@
     --transition-duration: 0.3s; 
     --content-width-desktop: 80%;
     --content-width-mobile: 90%;
+    scroll-behavior: smooth !important;
 }
 
-html {
-    scroll-behavior: smooth;
+*, html {
+
+    scroll-behavior: smooth !important;
 }
 
 body {
@@ -187,7 +189,8 @@ button:hover {
 }
 
 .about {
-    height: 600px;
+    height: auto;
+    min-height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -211,7 +214,7 @@ button:hover {
 }
 
 .profile-picture {
-    flex: 0 0 400px; /* Makes the profile picture 150px wide */
+    flex: 0 0 400px; /* Makes the profile picture 400px wide */
     margin-right: 100px; /* Adds some space between the picture and the text */
 }
 
@@ -229,7 +232,6 @@ button:hover {
     line-height: 4;
     margin: 0;
 }
-
 
 section {
     padding: 50px;
@@ -556,7 +558,12 @@ body.dark-mode #backToTop:hover {
         padding: 10px;
         width: var(--content-width-mobile);
     }
-
+    #darkModeToggle {
+        padding: 8px 16px; /* Reduce padding */
+        font-size: 0.9rem; /* Reduce font size */
+        right: 15px; /* Adjust position to prevent overflow */
+        top: 15px; /* Adjust position to prevent overlap */
+    }
     .hero {
         width: var(--content-width-mobile);
     }
@@ -612,6 +619,26 @@ body.dark-mode #backToTop:hover {
         display: inline-block;
         vertical-align: bottom;
     }
+    .about-content {
+        flex-direction: column; /* Stacks content vertically */
+        text-align: center; /* Centers text on smaller screens */
+        height: auto;
+        min-height: 600px;
+    }
+    
+    .profile-picture {
+        margin-right: 0;
+        margin-bottom: 20px; /* Adds space below the image */
+        width: 80%; /* Adjusts image size for smaller screens */
+    }
+
+    .about-text {
+        width: 100%; /* Makes the text full width */
+    }
+
+    .about-text p {
+        line-height: 1.5; /* Adjusts line spacing for readability on small screens */
+    }
 }
 
 @media (max-width: 576px) {
@@ -619,9 +646,17 @@ body.dark-mode #backToTop:hover {
         grid-template-columns: repeat(2, 1fr); /* 2 columns, smaller thumbnail */
         gap: 10px; /* Reduce gap between items */
     }
-
+    .profile-picture {
+        width: 100%; /* Makes the image take the full width on very small screens */
+    }
     .portfolio-item img {
         border-radius: 5px;
+    }
+    #darkModeToggle {
+        padding: 6px 12px; /* Further reduce padding */
+        font-size: 0.8rem; /* Further reduce font size */
+        right: 10px; /* Adjust position to prevent overflow */
+        top: 10px; /* Adjust position to prevent overlap */
     }
     #typewriter {
         font-family: 'Oswald', sans-serif;
@@ -634,5 +669,17 @@ body.dark-mode #backToTop:hover {
         animation: blink 0.7s step-end infinite;
         display: inline-block;
         vertical-align: bottom;
+    }
+    .about-content {
+        flex-direction: column; /* Stacks content vertically */
+        text-align: center; /* Centers text on smaller screens */
+    }
+    
+    .about-text {
+        width: 100%; /* Makes the text full width */
+    }
+
+    .about-text p {
+        line-height: 1.5; /* Adjusts line spacing for readability on small screens */
     }
 }
