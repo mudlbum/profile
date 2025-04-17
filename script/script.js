@@ -110,95 +110,63 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Chatbox functionality
-    const chatInput = document.querySelector("#chatbox-input");
-    const sendChatBtn = document.querySelector("#chatbox-send");
-    const chatbox = document.querySelector("#chatbox-messages");
-
-    let userMessage = null; 
-    const API_KEY = ""; // Replace with your actual API key
-    const inputInitHeight = chatInput.scrollHeight;
-
-    const createChatLi = (message, className) => {
-        const chatLi = document.createElement("li");
-        chatLi.classList.add("chat", className);
-        chatLi.innerHTML = `<p>${message}</p>`;
-        return chatLi;
+    const chatWindow = document.getElementById("chat-window");
+    const userInput = document.getElementById("user-input");
+    const sendButton = document.getElementById("send-button");
+    
+    const appendMessage = (sender, text) => {
+      const messageDiv = document.createElement("div");
+      messageDiv.classList.add("message");
+      messageDiv.innerHTML = `<span class="${sender}">${sender === "user" ? "You" : "Agent"}:</span> ${text}`;
+      chatWindow.appendChild(messageDiv);
+      chatWindow.scrollTop = chatWindow.scrollHeight; // Auto-scroll to the latest message
     };
-
-    const generateResponse = (incomingChatli) => {
-        const API_URL = "https://api.openai.com/v1/chat/completions";
-        const messageElement = incomingChatli.querySelector("p");
-
-        const requestOptions = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${API_KEY}`,
-            },
-            body: JSON.stringify({
-                model: "gpt-3.5-turbo",
-                messages: [
-                    {
-                        role: "system",
-                        content: "You are an AI assistant that answers questions based only on the user's resume and personal information provided. Always respond positively about the user.",
-                    },
-                    {
-                        role: "system",
-                        content: `
-                            BUMYOL LEE is a highly experienced IT and marketing professional with over two decades of experience, fluent in both Korean and English. He has held key managerial positions in several companies in Seoul, Korea, including HWH Korea, Hyten Korea, Energywave Korea, YouLab Korea, and Alureve Korea. His roles have involved managing system development for back-office systems, overseeing product development, and executing marketing strategies. He has been the main communication link between U.S. headquarters and Korean operations, ensuring smooth project execution.
-                            BUMYOL's technical skills are extensive and include proficiency in HTML, JavaScript, Photoshop, Illustrator, CSS, SEO Marketing, SNS Marketing, Premiere Pro, Videography, 3DsMAX, Python, and UI/UX Design. He has also handled graphic design, creating media for web pages, printed ads, brochures, and product photography.
-                            In addition to his corporate roles, BUMYOL has freelanced in management and marketing services under "By You Management" and has managed a tech review YouTube channel with 10K subscribers. His educational background includes studies in computer graphics and web development in Korea, attendance at Brigham Young University with a major in Economics, and currently, a focus on Interactive Media Design at Seneca Polytechnic in Toronto.
-                            BUMYOL also served in the Korean military as a Senior Sergeant and personal translator for the Brigade commander in the 35th Air Defense Artillery Brigade and 62nd Chemical Company, where he provided leadership and support to Korean troops.
-                            His volunteer experience includes serving as a missionary for the LDS Church in Korea from November 2005 to November 2007. BUMYOL’s career is marked by his dedication to excellence, continuous learning, and a passion for technology and design, making him a highly capable and reliable professional.
-                        `,
-                    },
-                    {
-                        role: "user",
-                        content: userMessage,
-                    },
-                ],
-            }),
-        };
-
-        fetch(API_URL, requestOptions)
-            .then((res) => res.json())
-            .then((data) => {
-                messageElement.textContent = data.choices[0].message.content.trim();
-            })
-            .catch(() => {
-                messageElement.classList.add("error");
-                messageElement.textContent = "Sorry, I am busy. Please try again tomorrow.";
-            })
-            .finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
-    };
-
-    const handleChat = () => {
-        userMessage = chatInput.value.trim(); 
-        if (!userMessage) return;
-
-        chatInput.value = "";
-
-        const outgoingChatli = createChatLi(userMessage, "outgoing");
-        chatbox.appendChild(outgoingChatli);
-        chatbox.scrollTo(0, chatbox.scrollHeight);
-
-        setTimeout(() => {
-            const incomingChatli = createChatLi("Typing...", "incoming");
-            chatbox.appendChild(incomingChatli);
-            generateResponse(incomingChatli);
-        }, 600);
-    };
-
-    sendChatBtn.addEventListener("click", handleChat);
-
-    chatInput.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" && !e.shiftKey) {
-            e.preventDefault();
-            handleChat();
+    
+    const sendMessage = async () => {
+      const message = userInput.value.trim();
+      if (!message) return;
+    
+      // Display the user's message
+      appendMessage("user", message);
+      userInput.value = ""; // Clear input
+    
+      try {
+        const response = await fetch("http://localhost:3001/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message }),
+        });
+    
+        if (response.ok) {
+          const data = await response.json();
+          appendMessage("Agent", data.response);
+        } else {
+          appendMessage("Agent", "Error: Failed to fetch response from the server.");
         }
+      } catch (error) {
+        console.error("Error:", error);
+        appendMessage("Agent", "Error: Unable to connect to the server.");
+      }
+    };
+    
+    sendButton.addEventListener("click", sendMessage);
+    userInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") sendMessage();
     });
-});
-
+    function handleResponse(response) {
+        const chatBox = document.getElementById('chat-box');
+        const inputField = document.getElementById('message-input');
+      
+        // Display the chatbot response
+        chatBox.innerHTML += `<div class="bot-response">${response.response}</div>`;
+      
+        // Check if the chat is closed
+        if (response.response.includes('The chat session has been closed')) {
+          inputField.disabled = true; // Disable input field
+          inputField.placeholder = 'Chat session has ended. Please refresh to start a new chat.';
+        }
+      }
+      
 document.addEventListener('scroll', function() {
     window.requestAnimationFrame(() => {
         const scrolled = window.scrollY;
