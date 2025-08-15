@@ -332,7 +332,7 @@ You: "I believe in empowering the team. My role is to provide the tools and supp
     const header = document.querySelector('header');
     if (header) {
         const logo = document.createElement('img');
-        logo.src = './images/bumyol-logo-image.png';
+        logo.src = 'images/bumyol-logo-image.png';
         logo.style.height = '60px';
         logo.style.width = 'auto';
         logo.style.marginRight = '20px';
