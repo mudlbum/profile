@@ -614,6 +614,15 @@ END: Updated Portfolio Animation Styles
   :root {
     font-size: 1rem;
   }
+  header nav {
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 50px;
+
+    align-items: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -839,9 +848,9 @@ END: Updated Portfolio Animation Styles
 }
 
 #portfolio {
-      box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    margin-bottom: 30px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
 
 /*
