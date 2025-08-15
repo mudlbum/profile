@@ -1,483 +1,497 @@
 /* Font Imports */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@300;400;500&display=swap");
 
 /*primary settings*/
 :root {
-    --bg-color: #d1d1d1;
-    --text-color: #313131;
-    --primary-color: #838383;
-    --secondary-color: #525252;
-    --accent-color: #b4b4b4;
-    --transition-duration: 0.3s;
-    --content-width-desktop: 80%;
-    --content-width-mobile: 90%;
-    font-size: 1.1rem;
-    scroll-behavior: smooth !important;
+  --bg-color: #d1d1d1;
+  --text-color: #313131;
+  --primary-color: #838383;
+  --secondary-color: #525252;
+  --accent-color: #b4b4b4;
+  --transition-duration: 0.3s;
+  --content-width-desktop: 80%;
+  --content-width-mobile: 90%;
+  font-size: 1.1rem;
+  scroll-behavior: smooth !important;
 }
 
-*, html {
-    scroll-behavior: smooth !important;
+*,
+html {
+  scroll-behavior: smooth !important;
 }
 
 body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color var(--transition-duration), color var(--transition-duration);
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color var(--transition-duration),
+    color var(--transition-duration);
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px;
-    background: var(--primary-color);
-    color: white;
-    width: var(--content-width-desktop);
-    margin: 0 auto;
-    transition: padding var(--transition-duration), background var(--transition-duration), width var(--transition-duration);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background: var(--primary-color);
+  color: white;
+  width: var(--content-width-desktop);
+  margin: 0 auto;
+  transition: padding var(--transition-duration),
+    background var(--transition-duration), width var(--transition-duration);
 }
 
 header h1 a {
-    color: white;
-    text-decoration: none;
-    font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
-    transition: font-size var(--transition-duration);
+  color: white;
+  text-decoration: none;
+  font-family: "Oswald", sans-serif;
+  font-size: 2rem;
+  transition: font-size var(--transition-duration);
 }
 
 header nav {
-    margin-left: 20px;
-    margin-right: auto;
+  margin-left: 20px;
+  margin-right: auto;
 }
 
 header nav a {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.2rem;
-    /* FIX: Removed the transition property that was overriding the JS animation */
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.2rem;
+  /* FIX: Removed the transition property that was overriding the JS animation */
 }
 
 /* Dark Mode Toggle Button Styles */
 #darkModeToggle {
-    background: var(--secondary-color);
-    border: none;
-    color: rgb(202, 202, 202);
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color var(--transition-duration), color var(--transition-duration), font-size var(--transition-duration);
-    font-family: 'Oswald', sans-serif;
-    font-size: 1rem;
-    border-radius: 20px; /* Rounded corners */
+  background: var(--secondary-color);
+  border: none;
+  color: rgb(202, 202, 202);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color var(--transition-duration),
+    color var(--transition-duration), font-size var(--transition-duration);
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  border-radius: 20px; /* Rounded corners */
 }
 
 #darkModeToggle:hover {
-    background-color: rgb(197, 197, 197);
-    color: var(--secondary-color);
+  background-color: rgb(197, 197, 197);
+  color: var(--secondary-color);
 }
 
 header nav a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 #typewriter {
-    font-family: 'Oswald', sans-serif;
-    font-size: 9rem;
-    display: inline;
+  font-family: "Oswald", sans-serif;
+  font-size: 9rem;
+  display: inline;
 }
 #cursor {
-    font-family: 'Oswald', sans-serif;
-    font-weight: bold;
-    font-size: 9rem;
-    animation: blink 0.7s step-end infinite;
-    display: inline-block;
-    vertical-align: baseline;
-    margin-left: 10px;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  font-size: 9rem;
+  animation: blink 0.7s step-end infinite;
+  display: inline-block;
+  vertical-align: baseline;
+  margin-left: 10px;
 }
 
 @keyframes blink {
-    50% {
-        opacity: 0;
-    }
+  50% {
+    opacity: 0;
+  }
 }
 button {
-    background: var(--secondary-color);
-    border: none;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color var(--transition-duration), color var(--transition-duration), font-size var(--transition-duration);
-    font-family: 'Oswald', sans-serif;
-    font-size: 1rem;
+  background: var(--secondary-color);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color var(--transition-duration),
+    color var(--transition-duration), font-size var(--transition-duration);
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
 }
 
 button:hover {
-    background-color: white;
-    color: var(--secondary-color);
+  background-color: white;
+  color: var(--secondary-color);
 }
 
 .hero {
-    position: relative;
-    background: var(--primary-color);
-    background-image: url('../images/heroImg.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    text-align: center;
-    font-family: 'Oswald', sans-serif;
-    width: var(--content-width-desktop);
-    margin: 0 auto;
-    transition: padding var(--transition-duration), color var(--transition-duration), width var(--transition-duration), background-color var(--transition-duration);
-    height: 600px; /* Ensure the hero section takes up the full viewport height */
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+  position: relative;
+  background: var(--primary-color);
+  background-image: url("../images/heroImg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  width: var(--content-width-desktop);
+  margin: 0 auto;
+  transition: padding var(--transition-duration),
+    color var(--transition-duration), width var(--transition-duration),
+    background-color var(--transition-duration);
+  height: 600px; /* Ensure the hero section takes up the full viewport height */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .hero-content {
-    max-width: 600px;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 10px;
-    transition: padding var(--transition-duration);
-    position: absolute; /* Positioning absolute within the hero section */
-    bottom: 150px; /* Stick the content to the bottom */
-    margin-bottom: 20px; /* Optional: adds space between content and bottom of section */
-    text-align: center; /* Ensure the content remains centered */
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  transition: padding var(--transition-duration);
+  position: absolute; /* Positioning absolute within the hero section */
+  bottom: 150px; /* Stick the content to the bottom */
+  margin-bottom: 20px; /* Optional: adds space between content and bottom of section */
+  text-align: center; /* Ensure the content remains centered */
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
-    transition: font-size var(--transition-duration);
+  font-size: 2.5rem;
+  transition: font-size var(--transition-duration);
 }
 
 .hero-content p {
-    font-size: 1rem;
-    margin: 20px 0;
-    transition: font-size var(--transition-duration);
+  font-size: 1rem;
+  margin: 20px 0;
+  transition: font-size var(--transition-duration);
 }
 
 .hero-button {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color var(--transition-duration), font-size var(--transition-duration);
-    font-size: 1rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color var(--transition-duration),
+    font-size var(--transition-duration);
+  font-size: 1rem;
 }
 
 .hero-button:hover {
-    background-color: var(--accent-color);
+  background-color: var(--accent-color);
 }
 
 .profile {
-    display: flex;
-    flex-wrap: wrap;
-    height: 800px;
-    padding: 50px;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--bg-color);
-    width: var(--content-width-desktop);
-    margin: 0 auto;
-    transition: padding var(--transition-duration), width var(--transition-duration), background-color var(--transition-duration);
+  display: flex;
+  flex-wrap: wrap;
+  height: 800px;
+  padding: 50px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  width: var(--content-width-desktop);
+  margin: 0 auto;
+  transition: padding var(--transition-duration),
+    width var(--transition-duration),
+    background-color var(--transition-duration);
 }
 
 .about {
-    height: auto;
-    min-height: 600px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  height: auto;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .about h2 {
-    margin-bottom: 20px; /* Adds some space between the heading and the content */
-    width: 100%; /* Ensure the heading takes up the full width */
-    text-align: left; /* Left-align the heading */
+  margin-bottom: 20px; /* Adds some space between the heading and the content */
+  width: 100%; /* Ensure the heading takes up the full width */
+  text-align: left; /* Left-align the heading */
 }
 
 .about-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 1000px; /* Limits the maximum width of the content */
-    text-align: left; /* Aligns text to the left within the about-text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px; /* Limits the maximum width of the content */
+  text-align: left; /* Aligns text to the left within the about-text */
 }
 
 .profile-picture {
-    flex: 0 0 400px; /* Makes the profile picture 400px wide */
-    margin-right: 100px; /* Adds some space between the picture and the text */
+  flex: 0 0 400px; /* Makes the profile picture 400px wide */
+  margin-right: 100px; /* Adds some space between the picture and the text */
 }
 
 .profile-picture img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .about-text {
-    flex: 1; /* Takes up the remaining space */
+  flex: 1; /* Takes up the remaining space */
 }
 
 .about-text p {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 4;
-    margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 4;
+  margin: 0;
 }
 
 section {
-    padding: 50px;
-    width: var(--content-width-desktop);
-    margin: 0 auto;
-    transition: padding var(--transition-duration), width var(--transition-duration), background-color var(--transition-duration);
+  padding: 50px;
+  width: var(--content-width-desktop);
+  margin: 0 auto;
+  transition: padding var(--transition-duration),
+    width var(--transition-duration),
+    background-color var(--transition-duration);
 }
 
 section:nth-child(odd) {
-    background-color: #e0e0e0;
+  background-color: #e0e0e0;
 }
 
 section:nth-child(even) {
-    background-color: #cfcfcf;
+  background-color: #cfcfcf;
 }
 
 .dark-mode {
-    --bg-color: #121212;
-    --text-color: #e0e0e0;
-    --primary-color: #444444b7;
-    --secondary-color: #616161;
-    --accent-color: #8a8a8a;
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --primary-color: #444444b7;
+  --secondary-color: #616161;
+  --accent-color: #8a8a8a;
 }
 
 body.dark-mode {
-    background-color: var(--bg-color);
-    color: var(--text-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 body.dark-mode header {
-    background: var(--primary-color);
+  background: var(--primary-color);
 }
 
 body.dark-mode .hero {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    background-image: url(../images/heroImgDark.jpg);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  background-image: url(../images/heroImgDark.jpg);
 }
 
 body.dark-mode .hero-content {
-    background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 body.dark-mode .profile {
-    background-color: var(--bg-color);
+  background-color: var(--bg-color);
 }
 
 body.dark-mode section:nth-child(odd) {
-    background-color: #333333;
+  background-color: #333333;
 }
 
 body.dark-mode section:nth-child(even) {
-    background-color: #444444;
+  background-color: #444444;
 }
 
 /* Carousel Styles */
 .carousel {
-    position: relative;
-    max-width: 600px;
-    margin: auto;
-    overflow: hidden;
-    transition: max-width var(--transition-duration);
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+  transition: max-width var(--transition-duration);
 }
 
 .carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
 .carousel-inner img {
-    width: 100%;
-    transition: width var(--transition-duration);
+  width: 100%;
+  transition: width var(--transition-duration);
 }
 
 .carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    transition: font-size var(--transition-duration), background var(--transition-duration);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: font-size var(--transition-duration),
+    background var(--transition-duration);
 }
 
 .carousel-control.prev {
-    left: 10px;
+  left: 10px;
 }
 
 .carousel-control.next {
-    right: 10px;
+  right: 10px;
 }
 
 /* Skill Bar Styles */
 .skills {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Space between each skill item */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between each skill item */
 }
 
 .skill {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Ensure skill bar and logo are separated */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensure skill bar and logo are separated */
 }
 
 .skill-bar-container {
-    width: 70%;
-    background: #ddd;
-    border-radius: 25px;
-    overflow: hidden;
-    margin-right: 20px; /* Space between skill bar and logo */
+  width: 70%;
+  background: #ddd;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-right: 20px; /* Space between skill bar and logo */
 }
 
 .skill-bar-fill {
-    height: 30px;
-    line-height: 30px;
-    background: var(--primary-color);
-    color: white;
-    text-align: right;
-    padding-right: 10px;
-    width: 0; /* This will be filled based on data-percentage */
-    transition: width 2s ease;
-    border-radius: 25px 0 0 25px; /* Rounded corners only on the left */
+  height: 30px;
+  line-height: 30px;
+  background: var(--primary-color);
+  color: white;
+  text-align: right;
+  padding-right: 10px;
+  width: 0; /* This will be filled based on data-percentage */
+  transition: width 2s ease;
+  border-radius: 25px 0 0 25px; /* Rounded corners only on the left */
 }
 
 .skill-logo {
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .skill-logo img {
-    max-width: 60px; /* Adjust the logo size */
-    height: auto;
-    transition: transform 0.3s ease;
+  max-width: 60px; /* Adjust the logo size */
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
 .skill-logo img:hover {
-    transform: scale(1.1); /* Slightly enlarge logo on hover */
+  transform: scale(1.1); /* Slightly enlarge logo on hover */
 }
 
 body.dark-mode .skill-bar {
-    background: #555;
+  background: #555;
 }
 
 body.dark-mode .skill-bar-fill {
-    background: var(--primary-color);
+  background: var(--primary-color);
 }
 
 /* Back-to-Top Button Styles */
 #backToTop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none; /* Hidden by default */
-    background: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 1000;
-    transition: background var(--transition-duration), color var(--transition-duration), font-size var(--transition-duration);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none; /* Hidden by default */
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1000;
+  transition: background var(--transition-duration),
+    color var(--transition-duration), font-size var(--transition-duration);
 }
 
 #backToTop.show {
-    display: block;
+  display: block;
 }
 
 #backToTop:hover {
-    background: white;
-    color: var(--accent-color);
+  background: white;
+  color: var(--accent-color);
 }
 
 body.dark-mode #backToTop {
-    background: var(--primary-color);
-    color: var(--text-color);
+  background: var(--primary-color);
+  color: var(--text-color);
 }
 
 body.dark-mode #backToTop:hover {
-    background: var(--text-color);
-    color: var(--primary-color);
+  background: var(--text-color);
+  color: var(--primary-color);
 }
 .contact {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #chatbox {
-    align-self: center; /* Centers the chatbox within the contact section */
-    width: 90%;
-    max-width: 720px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    margin-top: 20px;
+  align-self: center; /* Centers the chatbox within the contact section */
+  width: 90%;
+  max-width: 720px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 
 #chatbox-messages {
-    height: 200px;
-    overflow-y: auto;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+  height: 200px;
+  overflow-y: auto;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 #chatbox-messages p {
-    margin: 5px 0;
-    padding: 8px;
-    background-color: #e0e0e0;
-    border-radius: 4px;
+  margin: 5px 0;
+  padding: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
 }
 
 #chatbox-input {
-    width: calc(100% - 120px);
-    padding: 10px;
-    margin-right: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+  width: calc(100% - 120px);
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 #chatbox-send {
-    padding: 10px 20px;
-    border: none;
-    background-color: #535353;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  background-color: #535353;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 #chatbox-send:hover {
-    background-color: #979797;
+  background-color: #979797;
 }
-
 
 /* Portfolio Grid Styles */
 .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columns by default */
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns by default */
+  gap: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /*
@@ -487,55 +501,54 @@ START: Updated Portfolio Animation Styles
 */
 
 .portfolio-item {
-    position: relative; /* This is crucial for positioning the caption */
-    cursor: pointer;
-    overflow: hidden; /* Hides parts of the caption that might stick out */
-    aspect-ratio: 1 / 1; /* FIX: Forces all items into a square shape */
+  position: relative; /* This is crucial for positioning the caption */
+  cursor: pointer;
+  overflow: hidden; /* Hides parts of the caption that might stick out */
+  aspect-ratio: 1 / 1; /* FIX: Forces all items into a square shape */
 }
 
 .portfolio-item img {
-    width: 100%;
-    height: 100%; /* FIX: Makes image fill the container */
-    object-fit: cover; /* FIX: Crops the image to fit without distortion */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 10px;
-    display: block; /* Removes any extra space below the image */
+  width: 100%;
+  height: 100%; /* FIX: Makes image fill the container */
+  object-fit: cover; /* FIX: Crops the image to fit without distortion */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  display: block; /* Removes any extra space below the image */
 }
 
 .portfolio-item:hover img {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
 }
 
 /* Styles for the caption overlay to show alt text */
 .portfolio-caption {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(82, 82, 82, 0.85); /* Using your theme colors */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 2;
-    border-radius: 10px; /* Match the image's border-radius */
-    pointer-events: none; /* Allows clicks to go through to the image if needed */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(82, 82, 82, 0.85); /* Using your theme colors */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  border-radius: 10px; /* Match the image's border-radius */
+  pointer-events: none; /* Allows clicks to go through to the image if needed */
 }
 
 .portfolio-item:hover .portfolio-caption {
-    opacity: 1;
+  opacity: 1;
 }
 
 .portfolio-caption-content {
-    color: #e0e0e0; /* Light text for dark overlay */
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 500;
-    text-align: center;
-    padding: 1rem;
+  color: #e0e0e0; /* Light text for dark overlay */
+  font-family: "Oswald", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 1rem;
 }
 
 /*
@@ -545,288 +558,293 @@ END: Updated Portfolio Animation Styles
 */
 
 .contact-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* Space between icons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between icons */
 }
 
 .contact-icons a {
-    color: #525252; /* Initial color (which will be grayscaled) */
-    font-size: 3rem; /* Larger icon size */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease, filter 0.3s ease; /* Smooth transition */
-    filter: grayscale(100%); /* Apply grayscale effect */
+  color: #525252; /* Initial color (which will be grayscaled) */
+  font-size: 3rem; /* Larger icon size */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease, filter 0.3s ease; /* Smooth transition */
+  filter: grayscale(100%); /* Apply grayscale effect */
 }
 
 .contact-icons a:hover {
-    filter: none; /* Remove grayscale on hover */
-    color: #313131; /* Optional: Change color on hover */
+  filter: none; /* Remove grayscale on hover */
+  color: #313131; /* Optional: Change color on hover */
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns */
-    }
-    #typewriter {
-        font-family: 'Oswald', sans-serif;
-        font-size: 8rem;
-        height: 200px;
-    }
-    #cursor {
-        font-weight: bold;
-        font-size: 8rem;
-        animation: blink 0.7s step-end infinite;
-        display: inline-block;
-        vertical-align: bottom;
-    }
+  .portfolio-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  }
+  #typewriter {
+    font-family: "Oswald", sans-serif;
+    font-size: 8rem;
+    height: 200px;
+  }
+  #cursor {
+    font-weight: bold;
+    font-size: 8rem;
+    animation: blink 0.7s step-end infinite;
+    display: inline-block;
+    vertical-align: bottom;
+  }
 }
 
 @media (max-width: 992px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    }
-    #typewriter {
-        font-family: 'Oswald', sans-serif;
-        font-size: 5rem;
-        height: 180px;
-    }
-    #cursor {
-        font-weight: bold;
-        font-size: 5rem;
-        animation: blink 0.7s step-end infinite;
-        display: inline-block;
-        vertical-align: bottom;
-    }
-    :root {
-        font-size: 1rem;
-    }
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  }
+  #typewriter {
+    font-family: "Oswald", sans-serif;
+    font-size: 5rem;
+    height: 180px;
+  }
+  #cursor {
+    font-weight: bold;
+    font-size: 5rem;
+    animation: blink 0.7s step-end infinite;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  :root {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    }
-    header {
-        flex-direction: column;
-        text-align: center;
-        padding: 10px;
-        width: var(--content-width-mobile);
-    }
-    :root {
-        font-size: .9rem;
-    }
-    #darkModeToggle {
-        padding: 8px 16px; /* Reduce padding */
-        font-size: 0.9rem; /* Reduce font size */
-        right: 15px; /* Adjust position to prevent overflow */
-        top: 15px; /* Adjust position to prevent overlap */
-    }
-    .hero {
-        width: var(--content-width-mobile);
-    }
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    width: var(--content-width-mobile);
+  }
+  :root {
+    font-size: 0.9rem;
+  }
+  #darkModeToggle {
+    padding: 8px 16px; /* Reduce padding */
+    font-size: 0.9rem; /* Reduce font size */
+    right: 15px; /* Adjust position to prevent overflow */
+    top: 15px; /* Adjust position to prevent overlap */
+  }
+  .hero {
+    width: var(--content-width-mobile);
+  }
 
-    .profile {
-        flex-direction: column;
-        padding: 20px;
-        width: var(--content-width-mobile);
-    }
+  .profile {
+    flex-direction: column;
+    padding: 20px;
+    width: var(--content-width-mobile);
+  }
 
-    .profile-info {
-        margin-left: 0;
-        text-align: center;
-    }
+  .profile-info {
+    margin-left: 0;
+    text-align: center;
+  }
 
-    section {
-        padding: 20px;
-        width: var(--content-width-mobile);
-    }
+  section {
+    padding: 20px;
+    width: var(--content-width-mobile);
+  }
 
-    header h1 a {
-        font-size: 1.5rem;
-    }
+  header h1 a {
+    font-size: 1.5rem;
+  }
 
-    header nav a {
-        font-size: 0.9rem;
-    }
+  header nav a {
+    font-size: 0.9rem;
+  }
 
-    .hero-content h1 {
-        font-size: 2rem;
-    }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
 
-    .hero-content p {
-        font-size: 0.9rem;
-    }
+  .hero-content p {
+    font-size: 0.9rem;
+  }
 
-    .hero-button {
-        font-size: 0.9rem;
-    }
+  .hero-button {
+    font-size: 0.9rem;
+  }
 
-    button {
-        font-size: 0.9rem;
-    }
-    #typewriter {
-        font-family: 'Oswald', sans-serif;
-        font-size: 2.5rem;
-        height: 120px;
-    }
-    #cursor {
-        font-weight: bold;
-        font-size: 2.5rem;
-        animation: blink 0.7s step-end infinite;
-        display: inline-block;
-        vertical-align: bottom;
-    }
-    .about-content {
-        flex-direction: column; /* Stacks content vertically */
-        text-align: center; /* Centers text on smaller screens */
-        height: auto;
-        min-height: 600px;
-    }
-    
-    .profile-picture {
-        margin-right: 0;
-        margin-bottom: 20px; /* Adds space below the image */
-        width: 80%; /* Adjusts image size for smaller screens */
-    }
+  button {
+    font-size: 0.9rem;
+  }
+  #typewriter {
+    font-family: "Oswald", sans-serif;
+    font-size: 2.5rem;
+    height: 120px;
+  }
+  #cursor {
+    font-weight: bold;
+    font-size: 2.5rem;
+    animation: blink 0.7s step-end infinite;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  .about-content {
+    flex-direction: column; /* Stacks content vertically */
+    text-align: center; /* Centers text on smaller screens */
+    height: auto;
+    min-height: 600px;
+  }
 
-    .about-text {
-        width: 100%; /* Makes the text full width */
+  .profile-picture {
+    margin-right: 0;
+    margin-bottom: 20px; /* Adds space below the image */
+    width: 80%; /* Adjusts image size for smaller screens */
+  }
 
-    }
-    
-    .about-text p {
-        font-size: 0.8rem; /* Adjust this value as needed */
-        line-height: 4;
-        margin: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-        .portfolio-nav a {
-        font-size: 0; /* Hide the text */
-        width: 40px;   /* Create a fixed width */
-        height: 18px;  /* Create a fixed height */
-        border-radius: 50%; /* Make the buttons circular */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-    }
+  .about-text {
+    width: 100%; /* Makes the text full width */
+  }
 
-    .portfolio-nav a::before {
-        /* Use Font Awesome for the icons */
-        font-family: "Font Awesome 6 Free";
-        font-weight: 900; /* Use solid icons */
-        font-size: 1rem; /* Set the icon size */
-    }
+  .about-text p {
+    font-size: 0.8rem; /* Adjust this value as needed */
+    line-height: 4;
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .portfolio-nav a {
+    font-size: 0; /* Hide the text */
+    width: 40px; /* Create a fixed width */
+    height: 18px; /* Create a fixed height */
+    border-radius: 50%; /* Make the buttons circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
 
-    /* Assign a specific icon to each category link */
-    .portfolio-nav a[data-category="all"]::before {
-        content: '\f009'; /* fa-th */
-    }
-    .portfolio-nav a[data-category="video"]::before {
-        content: '\f008'; /* fa-video */
-    }
-    .portfolio-nav a[data-category="sound"]::before {
-        content: '\f001'; /* fa-music */
-    }
-    .portfolio-nav a[data-category="ux-ui"]::before {
-        content: '\f10b'; /* fa-mobile-alt */
-    }
-    .portfolio-nav a[data-category="photo"]::before {
-        content: '\f030'; /* fa-camera */
-    }
-    .portfolio-nav a[data-category="front-end"]::before {
-        content: '\f121'; /* fa-code */
-    }
-    .portfolio-nav a[data-category="design"]::before {
-        content: '\f53f'; /* fa-palette */
-    }
+  .portfolio-nav a::before {
+    /* Use Font Awesome for the icons */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900; /* Use solid icons */
+    font-size: 1rem; /* Set the icon size */
+  }
+
+  /* Assign a specific icon to each category link */
+  .portfolio-nav a[data-category="all"]::before {
+    content: "\f009"; /* fa-th */
+  }
+  .portfolio-nav a[data-category="video"]::before {
+    content: "\f008"; /* fa-video */
+  }
+  .portfolio-nav a[data-category="sound"]::before {
+    content: "\f001"; /* fa-music */
+  }
+  .portfolio-nav a[data-category="ux-ui"]::before {
+    content: "\f10b"; /* fa-mobile-alt */
+  }
+  .portfolio-nav a[data-category="photo"]::before {
+    content: "\f030"; /* fa-camera */
+  }
+  .portfolio-nav a[data-category="front-end"]::before {
+    content: "\f121"; /* fa-code */
+  }
+  .portfolio-nav a[data-category="design"]::before {
+    content: "\f53f"; /* fa-palette */
+  }
 }
 
 @media (max-width: 576px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns, smaller thumbnail */
-        gap: 10px; /* Reduce gap between items */
-    }
-    .profile-picture {
-        width: 100%; /* Makes the image take the full width on very small screens */
-    }
-    .portfolio-item img {
-        border-radius: 5px;
-    }
-    #darkModeToggle {
-        padding: 6px 12px; /* Further reduce padding */
-        font-size: 0.8rem; /* Further reduce font size */
-        right: 10px; /* Adjust position to prevent overflow */
-        top: 10px; /* Adjust position to prevent overlap */
-    }
-    #typewriter {
-        font-family: 'Oswald', sans-serif;
-        font-size: 2rem;
-        height: 90px;
-    }
-    #cursor {
-        font-weight: bold;
-        font-size: 2rem;
-        animation: blink 0.7s step-end infinite;
-        display: inline-block;
-        vertical-align: bottom;
-    }
-    .about-content {
-        flex-direction: column; /* Stacks content vertically */
-        text-align: center; /* Centers text on smaller screens */
-    }
-    
-    .about-text {
-        width: 100%; /* Makes the text full width */
-    }
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns, smaller thumbnail */
+    gap: 10px; /* Reduce gap between items */
+  }
+  .profile-picture {
+    width: 100%; /* Makes the image take the full width on very small screens */
+  }
+  .portfolio-item img {
+    border-radius: 5px;
+  }
+  #darkModeToggle {
+    padding: 6px 12px; /* Further reduce padding */
+    font-size: 0.8rem; /* Further reduce font size */
+    right: 10px; /* Adjust position to prevent overflow */
+    top: 10px; /* Adjust position to prevent overlap */
+  }
+  #typewriter {
+    font-family: "Oswald", sans-serif;
+    font-size: 2rem;
+    height: 90px;
+  }
+  #cursor {
+    font-weight: bold;
+    font-size: 2rem;
+    animation: blink 0.7s step-end infinite;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  .about-content {
+    flex-direction: column; /* Stacks content vertically */
+    text-align: center; /* Centers text on smaller screens */
+  }
 
-    .about-text p {
-        line-height: 1.5; /* Adjusts line spacing for readability on small screens */
-    }
+  .about-text {
+    width: 100%; /* Makes the text full width */
+  }
+
+  .about-text p {
+    line-height: 1.5; /* Adjusts line spacing for readability on small screens */
+  }
 }
 /* Styles for the Portfolio Navigation Menu */
 .portfolio-nav {
-    display: flex;
-    justify-content:flex-start;
-    margin-bottom: 2rem; /* Adds space below the nav */
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2rem; /* Adds space below the nav */
 }
 
 .portfolio-nav h2 {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-    justify-content: left;
-
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  justify-content: left;
 }
 
 .portfolio-nav a {
-    margin-left: 1%;
-    display: block; /* Makes the link fill the li */
-    padding: 8px 16px;
-    cursor: pointer;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 500;
-    color: var(--text-color); /* Use your theme's text color */
-    text-decoration: none;
-    border-radius: 20px; /* Rounded corners */
-    transition: background-color 0.3s, color 0.3s;
+  margin-left: 1%;
+  display: block; /* Makes the link fill the li */
+  padding: 8px 16px;
+  cursor: pointer;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  color: var(--text-color); /* Use your theme's text color */
+  text-decoration: none;
+  border-radius: 20px; /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Style for when you hover over an item */
 .portfolio-nav a:hover {
-    background-color: var(--secondary-color);
-    color: white;
+  background-color: var(--secondary-color);
+  color: white;
 }
 
 /* Style for the currently active category */
 .portfolio-nav li.active a {
-    background-color: var(--secondary-color);
-    color: white;
+  background-color: var(--secondary-color);
+  color: white;
 }
+
+#portfolio {
+      box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
 /*
 =================================================================
 START: Chatbot Styles
@@ -834,108 +852,108 @@ START: Chatbot Styles
 */
 
 .chatbox {
-    display: flex;
-    flex-direction: column;
-    height: 450px; /* Set a fixed height for the chatbox */
-    max-width: 720px;
-    width: 90%;
-    margin: 2rem auto 0; /* Center it and add space on top */
-    border: 1px solid var(--accent-color);
-    border-radius: 10px;
-    overflow: hidden; /* Keeps everything contained */
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 450px; /* Set a fixed height for the chatbox */
+  max-width: 720px;
+  width: 90%;
+  margin: 2rem auto 0; /* Center it and add space on top */
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  overflow: hidden; /* Keeps everything contained */
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .chatbox-messages {
-    flex-grow: 1; /* Allows this area to fill the available space */
-    overflow-y: auto; /* Makes the messages scrollable */
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Adds space between messages */
+  flex-grow: 1; /* Allows this area to fill the available space */
+  overflow-y: auto; /* Makes the messages scrollable */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adds space between messages */
 }
 
 /* General style for all message bubbles */
 .chatbox-messages p {
-    margin: 0;
-    padding: 10px 15px;
-    border-radius: 18px;
-    max-width: 75%;
-    line-height: 1.4;
+  margin: 0;
+  padding: 10px 15px;
+  border-radius: 18px;
+  max-width: 75%;
+  line-height: 1.4;
 }
 
 /* Style for messages sent by the user */
 .user-message {
-    align-self: flex-end; /* Aligns to the right */
-    background-color: var(--primary-color);
-    color: white;
-    border-bottom-right-radius: 4px; /* Creates the "tail" effect */
+  align-self: flex-end; /* Aligns to the right */
+  background-color: var(--primary-color);
+  color: white;
+  border-bottom-right-radius: 4px; /* Creates the "tail" effect */
 }
 
 /* Style for messages from the AI */
 .ai-message {
-    align-self: flex-start; /* Aligns to the left */
-    background-color: #e0e0e0;
-    color: var(--text-color);
-    border-bottom-left-radius: 4px; /* Creates the "tail" effect */
+  align-self: flex-start; /* Aligns to the left */
+  background-color: #e0e0e0;
+  color: var(--text-color);
+  border-bottom-left-radius: 4px; /* Creates the "tail" effect */
 }
 
 .chat-input {
-    display: flex;
-    padding: 10px;
-    border-top: 1px solid var(--accent-color);
-    background-color: #fff;
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid var(--accent-color);
+  background-color: #fff;
 }
 
 #chatbox-input {
-    flex-grow: 1;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 10px 15px;
-    font-size: 1rem;
-    margin-right: 10px;
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  margin-right: 10px;
 }
 
 #chatbox-send {
-    border: none;
-    background-color: var(--secondary-color);
-    color: white;
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-family: 'Oswald', sans-serif;
-    transition: background-color 0.3s;
+  border: none;
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: "Oswald", sans-serif;
+  transition: background-color 0.3s;
 }
 
 #chatbox-send:hover {
-    background-color: var(--primary-color);
+  background-color: var(--primary-color);
 }
 
 /* Dark mode styles for the chatbox */
 body.dark-mode .chatbox {
-    background-color: #333;
-    border-color: #555;
+  background-color: #333;
+  border-color: #555;
 }
 
 body.dark-mode .chatbox-messages {
-    background-color: #222;
+  background-color: #222;
 }
 
 body.dark-mode .ai-message {
-    background-color: #444;
-    color: #e0e0e0;
+  background-color: #444;
+  color: #e0e0e0;
 }
 
 body.dark-mode .chat-input {
-    background-color: #333;
-    border-top-color: #555;
+  background-color: #333;
+  border-top-color: #555;
 }
 
 body.dark-mode #chatbox-input {
-    background-color: #555;
-    border-color: #666;
-    color: #e0e0e0;
+  background-color: #555;
+  border-color: #666;
+  color: #e0e0e0;
 }
 
 /*
