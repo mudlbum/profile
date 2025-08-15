@@ -491,7 +491,6 @@ body.dark-mode #backToTop:hover {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 columns by default */
   gap: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /*
