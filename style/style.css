@@ -8,7 +8,7 @@
     --primary-color: #838383;
     --secondary-color: #525252;
     --accent-color: #b4b4b4;
-    --transition-duration: 0.3s; 
+    --transition-duration: 0.3s;
     --content-width-desktop: 80%;
     --content-width-mobile: 90%;
     font-size: 1.1rem;
@@ -16,7 +16,6 @@
 }
 
 *, html {
-
     scroll-behavior: smooth !important;
 }
 
@@ -48,16 +47,19 @@ header h1 a {
     transition: font-size var(--transition-duration);
 }
 
+header nav {
+    margin-left: 20px;
+    margin-right: auto;
+}
+
 header nav a {
     margin: 0 10px;
     color: white;
     text-decoration: none;
     font-family: 'Oswald', sans-serif;
     font-size: 1.2rem;
-    transition: font-size var(--transition-duration);
+    /* FIX: Removed the transition property that was overriding the JS animation */
 }
-
-
 
 /* Dark Mode Toggle Button Styles */
 #darkModeToggle {
@@ -117,8 +119,6 @@ button:hover {
     color: var(--secondary-color);
 }
 
-
-
 .hero {
     position: relative;
     background: var(--primary-color);
@@ -135,8 +135,8 @@ button:hover {
     transition: padding var(--transition-duration), color var(--transition-duration), width var(--transition-duration), background-color var(--transition-duration);
     height: 600px; /* Ensure the hero section takes up the full viewport height */
     display: flex;
-    align-items: flex-start; 
-    justify-content: center; 
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .hero-content {
@@ -480,17 +480,69 @@ body.dark-mode #backToTop:hover {
     gap: 20px;
 }
 
-.portfolio-item img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 10px;
+/*
+=================================================================
+START: Updated Portfolio Animation Styles
+=================================================================
+*/
+
+.portfolio-item {
+    position: relative; /* This is crucial for positioning the caption */
+    cursor: pointer;
+    overflow: hidden; /* Hides parts of the caption that might stick out */
+    aspect-ratio: 1 / 1; /* FIX: Forces all items into a square shape */
 }
 
-.portfolio-item img:hover {
+.portfolio-item img {
+    width: 100%;
+    height: 100%; /* FIX: Makes image fill the container */
+    object-fit: cover; /* FIX: Crops the image to fit without distortion */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    display: block; /* Removes any extra space below the image */
+}
+
+.portfolio-item:hover img {
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
+
+/* Styles for the caption overlay to show alt text */
+.portfolio-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(82, 82, 82, 0.85); /* Using your theme colors */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    border-radius: 10px; /* Match the image's border-radius */
+    pointer-events: none; /* Allows clicks to go through to the image if needed */
+}
+
+.portfolio-item:hover .portfolio-caption {
+    opacity: 1;
+}
+
+.portfolio-caption-content {
+    color: #e0e0e0; /* Light text for dark overlay */
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 1rem;
+}
+
+/*
+=================================================================
+END: Updated Portfolio Animation Styles
+=================================================================
+*/
 
 .contact-icons {
     display: flex;
@@ -650,6 +702,46 @@ body.dark-mode #backToTop:hover {
         margin: 0;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+        .portfolio-nav a {
+        font-size: 0; /* Hide the text */
+        width: 40px;   /* Create a fixed width */
+        height: 18px;  /* Create a fixed height */
+        border-radius: 50%; /* Make the buttons circular */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .portfolio-nav a::before {
+        /* Use Font Awesome for the icons */
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900; /* Use solid icons */
+        font-size: 1rem; /* Set the icon size */
+    }
+
+    /* Assign a specific icon to each category link */
+    .portfolio-nav a[data-category="all"]::before {
+        content: '\f009'; /* fa-th */
+    }
+    .portfolio-nav a[data-category="video"]::before {
+        content: '\f008'; /* fa-video */
+    }
+    .portfolio-nav a[data-category="sound"]::before {
+        content: '\f001'; /* fa-music */
+    }
+    .portfolio-nav a[data-category="ux-ui"]::before {
+        content: '\f10b'; /* fa-mobile-alt */
+    }
+    .portfolio-nav a[data-category="photo"]::before {
+        content: '\f030'; /* fa-camera */
+    }
+    .portfolio-nav a[data-category="front-end"]::before {
+        content: '\f121'; /* fa-code */
+    }
+    .portfolio-nav a[data-category="design"]::before {
+        content: '\f53f'; /* fa-palette */
+    }
 }
 
 @media (max-width: 576px) {
@@ -694,3 +786,160 @@ body.dark-mode #backToTop:hover {
         line-height: 1.5; /* Adjusts line spacing for readability on small screens */
     }
 }
+/* Styles for the Portfolio Navigation Menu */
+.portfolio-nav {
+    display: flex;
+    justify-content:flex-start;
+    margin-bottom: 2rem; /* Adds space below the nav */
+}
+
+.portfolio-nav h2 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    justify-content: left;
+
+}
+
+.portfolio-nav a {
+    margin-left: 1%;
+    display: block; /* Makes the link fill the li */
+    padding: 8px 16px;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    color: var(--text-color); /* Use your theme's text color */
+    text-decoration: none;
+    border-radius: 20px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Style for when you hover over an item */
+.portfolio-nav a:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Style for the currently active category */
+.portfolio-nav li.active a {
+    background-color: var(--secondary-color);
+    color: white;
+}
+/*
+=================================================================
+START: Chatbot Styles
+=================================================================
+*/
+
+.chatbox {
+    display: flex;
+    flex-direction: column;
+    height: 450px; /* Set a fixed height for the chatbox */
+    max-width: 720px;
+    width: 90%;
+    margin: 2rem auto 0; /* Center it and add space on top */
+    border: 1px solid var(--accent-color);
+    border-radius: 10px;
+    overflow: hidden; /* Keeps everything contained */
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.chatbox-messages {
+    flex-grow: 1; /* Allows this area to fill the available space */
+    overflow-y: auto; /* Makes the messages scrollable */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds space between messages */
+}
+
+/* General style for all message bubbles */
+.chatbox-messages p {
+    margin: 0;
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 75%;
+    line-height: 1.4;
+}
+
+/* Style for messages sent by the user */
+.user-message {
+    align-self: flex-end; /* Aligns to the right */
+    background-color: var(--primary-color);
+    color: white;
+    border-bottom-right-radius: 4px; /* Creates the "tail" effect */
+}
+
+/* Style for messages from the AI */
+.ai-message {
+    align-self: flex-start; /* Aligns to the left */
+    background-color: #e0e0e0;
+    color: var(--text-color);
+    border-bottom-left-radius: 4px; /* Creates the "tail" effect */
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid var(--accent-color);
+    background-color: #fff;
+}
+
+#chatbox-input {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+#chatbox-send {
+    border: none;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    transition: background-color 0.3s;
+}
+
+#chatbox-send:hover {
+    background-color: var(--primary-color);
+}
+
+/* Dark mode styles for the chatbox */
+body.dark-mode .chatbox {
+    background-color: #333;
+    border-color: #555;
+}
+
+body.dark-mode .chatbox-messages {
+    background-color: #222;
+}
+
+body.dark-mode .ai-message {
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .chat-input {
+    background-color: #333;
+    border-top-color: #555;
+}
+
+body.dark-mode #chatbox-input {
+    background-color: #555;
+    border-color: #666;
+    color: #e0e0e0;
+}
+
+/*
+=================================================================
+END: Chatbot Styles
+=================================================================
+*/
