@@ -724,8 +724,8 @@ END: Updated Portfolio Animation Styles
   }
   .portfolio-nav a {
     font-size: 0; /* Hide the text */
-    width: 40px; /* Create a fixed width */
-    height: 18px; /* Create a fixed height */
+    width: 20px; /* Create a fixed width */
+    height: 20px; /* Create a fixed height */
     border-radius: 50%; /* Make the buttons circular */
     display: flex;
     align-items: center;
@@ -809,8 +809,11 @@ END: Updated Portfolio Animation Styles
 /* Styles for the Portfolio Navigation Menu */
 .portfolio-nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  margin-bottom: 2rem; /* Adds space below the nav */
+  margin-bottom: 2rem;
+      align-items: center;
+    justify-content: center;
 }
 
 .portfolio-nav h2 {
