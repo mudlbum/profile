@@ -812,8 +812,6 @@ END: Updated Portfolio Animation Styles
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-bottom: 2rem;
-      align-items: center;
-    justify-content: center;
 }
 
 .portfolio-nav h2 {
