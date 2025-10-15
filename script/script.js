@@ -137,7 +137,7 @@ const prompt = `Based on this information: "${resumeInfo}", answer the following
         // ===============================================================
         // === IMPORTANT: PASTE YOUR GEMINI API KEY HERE =================
         // ===============================================================
-        const apiKey = "AIzaSyAq_k-pRaTLG0QNY4r0SE1vx1Dvxb_lQsA";
+        const apiKey = "AIzaSyAjHsqtSPt-sXxZBEg4qG_4ySECT7Jx1_w";
         // ===============================================================
 
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
