@@ -970,3 +970,26 @@ body.dark-mode #chatbox-input {
 END: Chatbot Styles
 =================================================================
 */
+
+#hire-me-bubble {
+  /* Positioning */
+  position: fixed; /* Use fixed so it works even when scrolling */
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  
+  /* Appearance */
+  background-color: #000;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  
+  /* Behavior */
+  pointer-events: none; /* This is crucial! It lets you click "through" the bubble */
+  display: none; /* Hide it until the mouse moves */
+  
+  /* Smooth movement */
+  transition: transform 0.1s linear; 
+}

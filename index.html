@@ -8,6 +8,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@300;400;500&display=swap"
         rel="stylesheet">
+    <!-- MODIFICATION: Make sure the path to style.css is correct. Assuming it's in a 'style' folder. -->
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -31,6 +32,7 @@
         <div class="hero-content">
             <h1>MY EXPERIENCE</h1>
             <p>Take a look at my resume to learn about my professional path</p>
+            <!-- MODIFICATION: Assuming resume is in a 'resume' folder. -->
             <a href="./resume/Bumyol Lee - UXUI Designer Marketer Resume.pdf" target="_blank">
                 <button class="hero-button">Resume</button>
             </a>
@@ -41,6 +43,7 @@
         <h2>About Me</h2>
         <div class="about-content">
             <div class="profile-picture">
+                <!-- MODIFICATION: Assuming images are in an 'images' folder. -->
                 <img src="./images/profilepicture.png" alt="Profile Picture">
             </div>
             <div class="about-text">
@@ -69,175 +72,164 @@
                 <a href="#" data-category="photo">PHOTO</a>
                 <a href="#" data-category="sound">SOUND</a>
                 <a href="#" data-category="front-end">FRONT END</a>
-
-
-
             </nav>
             <!-- END: New Portfolio Navigation Menu -->
 
             <div class="portfolio-grid">
+                <!-- All portfolio items seem to have correct paths assuming 'images' and 'projects' folders -->
                 <div class="portfolio-item">
-                    <a href="./projects/5Senses.pdf" target="_blank" data-category="photo">
+                    <a href="./projects/5Senses.pdf" target="_blank" data-category="photo" data-description="A photography project exploring the five senses.">
                         <img src="./images/portfolio1.png" alt="Photography portfolio">
                     </a>
                 </div>
-                <!-- <div class="portfolio-item">
-                <a href="./projects/Bybell.pdf" target="_blank">
-                    <img src="./images/portfolio2.png" alt="Portfolio Item 2">
-                </a>
-            </div> -->
                 <div class="portfolio-item">
-                    <a href="./projects/collage.pdf" target="_blank" data-category="design">
+                    <a href="./projects/collage.pdf" target="_blank" data-category="design" data-description="A dynamic brand collage designed for Jordan.">
                         <img src="./images/portfolio3.png" alt="Collage for Jordan Brand">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="./projects/dialUI.pdf" target="_blank" data-category="ux-ui design">
+                    <a href="./projects/dialUI.pdf" target="_blank" data-category="ux-ui design" data-description="A conceptual UI design for a smart dial interface. This project explores innovative interaction methods using the dial that can be reached with your thumb. The interface gives users quick access to essential functions while minimizing distractions and keeping the one hand operation.">
                         <img src="./images/portfolio4.png" alt="Dial UI concept Art">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="./projects/flyr1.pdf" target="_blank" data-category="ux-ui design">
+                    <a href="./projects/flyr1.pdf" target="_blank" data-category="ux-ui design" data-description="A product concept for a unique 3D printed bag. The design challenge that Nike gave me was to create a bag that is eco-friendly because current bag production have so much trash generated and material is not good for the environment. My solution was to design a bag that can be 3D printed using sustainable materials, reducing waste and production costs. The bag features a modular design, allowing users to customize and adapt it to their needs. the side structural frame is 3D printed and the inside wrapper is made out of felxable special starch material that doesn't desolve in water but is biodegradable over time.">
                         <img src="./images/portfolio5.png" alt="3D Printed Bag concept">
                     </a>
                 </div>
-                <!-- <div class="portfolio-item">
-                <a href="./projects/Magazine assignment INM101_Bumyol_Lee.pdf" target="_blank">
-                    <img src="./images/portfolio6.png" alt="Magazine Design">
-                </a>
-            </div> -->
-                <!-- <div class="portfolio-item">
-                <a href="./projects/magneticChargerDesignApplication.pdf" target="_blank">
-                    <img src="./images/portfolio7.png" alt="Portfolio Item 7">
-                </a>
-            </div>             -->
                 <div class="portfolio-item">
-                    <a href="./projects/PSA.pdf" target="_blank" data-category="photo concept">
+                    <a href="./projects/PSA.pdf" target="_blank" data-category="photo concept" data-description="A powerful public service announcement (PSA) told through photography.">
                         <img src="./images/portfolio8.png" alt="Photography PSA project">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="./projects/Series.pdf" target="_blank" data-category="photo">
+                    <a href="./projects/Series.pdf" target="_blank" data-category="photo" data-description="A thematic photography series with a consistent narrative.">
                         <img src="./images/portfolio10.png" alt="Photography Series project">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="https://youtu.be/W6eyd958Oew" target="_blank" data-category="sound">
+                    <a href="https://youtu.be/W6eyd958Oew" target="_blank" data-category="sound" data-description="A complete sound recreation for a video scene. Sound was selected and mixed to match the visuals perfectly.">
                         <img src="./images/portfolio11.png" alt="Sound Recreation1">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="./projects/GAME_Sound.mp3" target="_blank" data-category="sound">
+                    <a href="./projects/GAME_Sound.mp3" target="_blank" data-category="sound" data-description="Game play sound effects created from scratch. Includes footsteps, ambient sounds, and action effects.">
                         <img src="./images/portfolio12.png" alt="Game Sound Creation">
                     </a>
                 </div>
                 <div class="portfolio-item">
                     <a href="./projects/Design Principle Energy Drink Brand Book - final.pdf" target="_blank"
-                        data-category="design">
+                        data-category="design" data-description="A complete brand book for a concept energy drink. It was a group project where I led the design direction and layout.">
                         <img src="./images/brandbook.png" alt="Concept Energy Drink Brand Book">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="https://www.bluestonesbpo.com/" target="_blank" data-category="front-end ux-ui">
+                    <a href="https://www.bluestonesbpo.com/" target="_blank" data-category="front-end ux-ui" data-description="A live client website for Bluestones BPO.">
                         <img src="./images/portfolio13.png" alt="Client Website1">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="https://www.tripleadental.co.kr/" target="_blank" data-category="front-end ux-ui">
+                    <a href="https://www.tripleadental.co.kr/" target="_blank" data-category="front-end ux-ui" data-description="A live client website for Triple A Dental in Korea.">
                         <img src="./images/portfolio14.png" alt="Client Website2">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="https://www.suud.info/" target="_blank">
-                        <img src="./images/portfolio15.png" alt="Client Website3" data-category="front-end ux-ui">
+                    <a href="https://www.suud.info/" target="_blank" data-category="front-end ux-ui" data-description="A live client website for SUUD, a design company.">
+                        <img src="./images/portfolio15.png" alt="Client Website3">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="https://www.heainsander.com/" target="_blank" data-category="front-end ux-ui">
+                    <a href="https://www.heainsander.com/" target="_blank" data-category="front-end ux-ui" data-description="A live client website for Heainsander.">
                         <img src="./images/portfolio16.png" alt="Client Website4">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="https://youtu.be/zD7aIq5JrPY" target="_blank" data-category="video">
+                    <a href="https://youtu.be/zD7aIq5JrPY" target="_blank" data-category="video" data-description="A high-energy commercial for a concept energy drink brand.">
                         <img src="./images/portfolio17.png" alt="Energy Drink Commercial">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="https://mudlbum.github.io/collabora/" target="_blank" data-category="front-end ux-ui">
+                    <a href="https://mudlbum.github.io/collabora/" target="_blank" data-category="front-end ux-ui" data-description="A web-based collaboration tool prototype. No need to sign up, no need to log in, no need for installation, just start using it right away. Also it has limitless file transfer cap because your computer or device becomes a server">
                         <img src="./images/20250814_143105.png" alt="Collaboration tool Web App">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="./projects/Alessi design brief.pdf" target="_blank" data-category="design">
+                    <a href="./projects/Alessi design brief.pdf" target="_blank" data-category="design" data-description="A conceptual design brief for the brand Alessi. The rebranding focuses on modern aesthetics while honoring Alessi's rich heritage of craftsmanship and innovation.">
                         <img src="./images/20250814_144445.png" alt="Alessi Design brief">
                     </a>
                 </div>
                 <div class="portfolio-item">
                     <a href="./projects/Bumyol_Lee(Dave)_Moving Poster.mp4" target="_blank"
-                        data-category="video ux-ui design">
+                        data-category="video ux-ui design" data-description="A moving poster concept for Bose audio products. The design combines sleek visuals with dynamic motion to capture attention and convey the brand's premium quality. I have used After Effects to create smooth transitions and engaging animations that highlight the key features of Bose products.">
                         <img src="./images/20250814_144753.png" alt="Bose Moving Poster Concept">
                     </a>
                 </div>
                 <div class="portfolio-item">
                     <a href="./projects/INM302_A2_LogoComposite_BumyolLee(Dave).mp4" target="_blank"
-                        data-category="video">
+                        data-category="video" data-description="A conceptual logo animation video for Nike. This demonstrates dynamic motion graphics that bring the Nike logo to life. The animation emphasizes fluidity and energy, reflecting the brand's commitment to athletic excellence and innovation.">
                         <img src="./images/20250814_145352.png" alt="Nike Logo Composite Concept">
                     </a>
                 </div>
                 <div class="portfolio-item">
                     <a href="./projects/INM310SAA Bumyol(Dave)Lee - TESLA persona and value proposition canvas.pdf"
-                        target="_blank" data-category="design">
+                        target="_blank" data-category="design" data-description="A value proposition canvas and persona study for TESLA. This project delves into understanding TESLA's target audience and crafting a value proposition that resonates with their needs and aspirations. The canvas outlines key customer segments, pain points, and the unique value TESLA offers in the electric vehicle market.">
                         <img src="./images/20250814_145408.png" alt="TESLA Value Proposition">
                     </a>
                 </div>
 
                 <div class="portfolio-item">
-                    <a href="./projects/Naturcycle.pdf" target="_blank" data-category="ux-ui design">
+                    <a href="./projects/Naturcycle.pdf" target="_blank" data-category="ux-ui design" data-description="A UX/UI concept for an environmental app, Naturcycle. This project includes A/B testing results and user flow diagrams to enhance user engagement and promote eco-friendly habits. The app aims to educate users on sustainable practices while providing tools to track their environmental impact.">
                         <img src="./images/20250814_145439.png" alt="UX/UI Naturcycle App Concept">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="./projects/vodden dental.pdf" target="_blank" data-category="ux-ui design">
+                    <a href="./projects/vodden dental.pdf" target="_blank" data-category="ux-ui design" data-description="A conceptual redesign for a dental website. The request was to redesign the web into child friendly fun concept design of the dental website. The new design focuses on creating a welcoming and engaging experience for children, incorporating playful elements and interactive features to alleviate dental anxiety and promote oral health education.">
                         <img src="./images/20250814_145459.png" alt="Dental Website Redesign Concept">
                     </a>
                 </div>
                 <div class="portfolio-item">
                     <a href="./projects/Design Bus_Final_Presentation Final Presentation.pdf" target="_blank"
-                        data-category="design">
+                        data-category="design" data-description="A marketing campaign concept project for energy drink brand that we conceptualized.">
                         <img src="./images/20250814_145523.png" alt="Marketing Campaign Concept">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="./projects/LG Banners & Hero IMG.pdf" target="_blank" data-category="design">
+                    <a href="./projects/LG Banners & Hero IMG.pdf" target="_blank" data-category="design" data-description="Concept banners and hero images for an LG campaign. This project showcases visually striking designs that highlight LG's innovative technology and sleek aesthetics. The banners and hero images are crafted to capture attention and convey the brand's commitment to quality and cutting-edge features. All images are photoshopped into seemless product placements that can be used for online ads and website headers.">
                         <img src="./images/BuyMoreWhite.png" alt="LG Banner & Hero img Concept">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="./projects/FocusGenie.pdf" target="_blank" data-category="ux-ui design">
+                    <a href="./projects/FocusGenie.pdf" target="_blank" data-category="ux-ui design" data-description="A UX/UI concept for a focus and productivity app. This was a design Jam competition project where the challenge was to create an app that helps users improve their focus and productivity. The app features a clean and intuitive interface, with tools for time management, task tracking, and distraction blocking. The design emphasizes simplicity and ease of use, making it accessible for users of all levels of tech-savviness.">
                         <img src="./images/20250814_151226.png" alt="App Concept FocusGenie">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="./projects/Case Study Layout.pdf" target="_blank" data-category="ux-ui design">
+                    <a href="./projects/Case Study Layout.pdf" target="_blank" data-category="ux-ui design" data-description="A deep-dive UI case study and layout analysis. This project suggests better UX/UI design for Samsung's website. The case study includes user research, wireframes, and high-fidelity mockups that demonstrate improved navigation, visual hierarchy, and overall user experience. The redesign aims to enhance user engagement and satisfaction by addressing pain points identified in the original design.">
                         <img src="./images/20250815_070749.png" alt="UI case Study">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="https://mudlbum.github.io/FamilyGame" target="_blank" data-category="ux-ui design">
+                    <a href="https://mudlbum.github.io/FamilyGame" target="_blank" data-category="front-end ux-ui design" data-description="A web-based family game called Sketchy Signals. The game allows family members to draw and guess words in a fun and interactive way.">
                         <img src="./images/familyGame.png" alt="Sketchy Signals Family Game">
                     </a>
                 </div>
                 <div class="portfolio-item">
-                    <a href="https://mudlbum.github.io/TradeSimulartor" target="_blank" data-category="ux-ui design">
+                    <a href="https://mudlbum.github.io/TradeSimulartor" target="_blank" data-category="front-end ux-ui design" data-description="A web app for simulating stock trades. The app already have all the strategys implemented so users can just focus on testing their trading results. If user likes the results, they can export the data as CSV file for further analysis.">
                         <img src="./images/tradingSim.png" alt="TradeSimulartor">
                     </a>
                 </div>
+                <div class="portfolio-item">
+                    <a href="https://mudlbum.github.io/SalesBuddy" target="_blank" data-category="front-end ux-ui design" data-description="An AI-powered Demo ERP system concept for Softmoc. The system focused to assortment planning tool that can predict best selling products based on historical sales data and market trends. This helps Softmoc to optimize their inventory and improve sales performance.">
+                        <img src="./images/salesbuddy.png" alt="Softmoc AI-ERP system suggestion">
+                    </a>
+                </div>
             </div>
+        </div> <!-- Closing .container div -->
     </section>
 
     <section id="skills" class="skills">
         <h2>Skills</h2>
-
+        <!-- All skill items seem correct -->
         <div class="skill">
             <div class="skill-bar-container">
                 <div class="skill-bar-fill" data-percentage="100%">HTML</div>
@@ -324,7 +316,7 @@
                 <div class="skill-bar-fill" data-percentage="95%">After Effect</div>
             </div>
             <div class="skill-logo">
-                <img src="./images/aftereffect.png" alt="Python Logo">
+                <img src="./images/aftereffect.png" alt="After Effect Logo">
             </div>
         </div>
         <div class="skill">
@@ -332,7 +324,7 @@
                 <div class="skill-bar-fill" data-percentage="90%">Blender</div>
             </div>
             <div class="skill-logo">
-                <img src="./images/blender.png" alt="Python Logo">
+                <img src="./images/blender.png" alt="Blender Logo">
             </div>
         </div>
         <div class="skill">
@@ -357,8 +349,9 @@
             </a>
         </div>
 
-        <!-- Chatbox -->
-        <div id="chatbox" class="chatbox">
+        <!-- Chatbox Container -->
+        <!-- MODIFICATION: Added a wrapper ID for the mouse follower context -->
+        <div id="chatbox-container" class="chatbox">
             <div id="chatbox-messages" class="chatbox-messages"></div>
             <div class="chat-input">
                 <input type="text" id="chatbox-input" placeholder="Ask me anything about Bumyol aka Dave">
@@ -366,9 +359,12 @@
             </div>
         </div>
     </section>
-    <section>
-        <button id="backToTop" onclick="scrollToTop()">TOP</button>
+    
+    <!-- Back to Top Button Section -->
+    <section class="back-to-top-container">
+        <button id="backToTop">TOP</button>
     </section>
+    
     <script type="module">
         // These scripts are required for Firebase to work.
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
@@ -376,6 +372,7 @@
         import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 
         // Your web app's Firebase configuration
+        // This key is public and safe to expose
         const firebaseConfig = {
             apiKey: "AIzaSyDr5lq7ruzuyRelkWj9LfTvPTzfiln1YnQ",
             authDomain: "portfolio-da68d.firebaseapp.com",
@@ -406,8 +403,10 @@
             signInAnonymously,
             signInWithCustomToken
         };
+        // Use the provided auth token if available, otherwise sign in anonymously
         window.initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
     </script>
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGHMPG3YKL"></script>
     <script>
@@ -417,7 +416,10 @@
 
         gtag('config', 'G-RGHMPG3YKL');
     </script>
+    
+    <!-- MODIFICATION: Make sure the path to script.js is correct. Assuming it's in a 'script' folder. -->
     <script src="./script/script.js"></script>
 </body>
 
 </html>
+
