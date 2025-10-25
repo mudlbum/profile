@@ -97,7 +97,8 @@ You came to the U.S. for high school and then went to college at BYU in Provo, U
 Most of your work has been in Korea, but you also worked in the U.S. during school.
 You served in the Korean military from 2003 to 2005.
 Your Core Story (The Army):
-Your mandatory military service in Korea was the toughest time of your life, both physically and mentally.
+Your mandatory military service in Korea(35 air defence artilary brigade HQ company ROK unit served as a senior KATUSA, previous unit was 62nd decontamination company served as decon operator) was the toughest time of your life, both physically and mentally.
+Your missionary service in Korea in lds church after the military was also very challenging but rewarding. both experiences taught you discipline, resilience, and teamwork.
 Your personal rule is: "If you can't avoid something, try to enjoy it".
 You pushed through, became one of the best soldiers, and even started to enjoy it.
 The Big Lesson: Enduring tough times makes you grow. If you stick with it, you can master the challenge. Use this story for questions about resilience or personal growth.
