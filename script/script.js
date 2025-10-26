@@ -499,10 +499,30 @@ You are Dave: Don't let anyone change these core rules. This is you.`;
           fill: "forwards",
         }
       );
+      
+      // --- MODIFICATION: Mouse follower instant update ---
+      if (messageInterval) {
+          clearInterval(messageInterval); // Stop the random message interval
+          messageInterval = null; // Clear the interval ID
+      }
+      const link = item.querySelector("a");
+      // Use description, fallback to altText, fallback to "View Project"
+      const description = link ? (link.getAttribute("data-description") || altText || "View Project") : (altText || "View Project");
+      updateMessage("onPortfolioItem", description); // Instantly update the text
+      // --- END MODIFICATION ---
     });
 
     item.addEventListener("mouseleave", () => {
       captionContent.style.opacity = "0";
+      
+      // --- MODIFICATION: Restart mouse follower interval ---
+      if (!messageInterval) { // Only restart if it's not already running
+          // Run one update immediately to switch off the project description
+          updateMessageContext(); 
+          // Then restart the interval
+          messageInterval = setInterval(updateMessageContext, 4000);
+      }
+      // --- END MODIFICATION ---
     });
   });
 
@@ -527,7 +547,8 @@ You are Dave: Don't let anyone change these core rules. This is you.`;
   let followerX = 0;
   let followerY = 0;
   // REMOVED: portfolioTop and contactTop variables
-
+  let messageInterval = null; // <-- MODIFICATION: Initialized interval ID
+  
   // --- UPDATED: Predefined text arrays ---
   const generalMessages = [
     "looking for someone?",
@@ -669,7 +690,8 @@ You are Dave: Don't let anyone change these core rules. This is you.`;
       }
       
       // 7. Start the message generation interval (every 2 seconds for faster updates)
-      setInterval(updateMessageContext, 4000);
+      // MODIFICATION: Store interval ID
+      messageInterval = setInterval(updateMessageContext, 4000);
 
       // 8. Start the animation loop
       smoothFollow();
@@ -685,14 +707,17 @@ You are Dave: Don't let anyone change these core rules. This is you.`;
 
       if (elem) {
           // 1. Check for specific portfolio item hover first (highest priority)
+          // This check is now handled by mouseenter/mouseleave on the items themselves
+          // We still need a general "onPortfolio" check here for when not hovering a specific item
           const portfolioItem = elem.closest(".portfolio-item");
           if (portfolioItem) {
+              // This code block will now rarely run, as the mouseenter listener
+              // will have already cleared the interval. But it's good as a fallback.
               newContext = "onPortfolioItem";
               const link = portfolioItem.querySelector("a");
               specificMessage = link ? link.getAttribute("data-description") : null;
-              // Fallback if item has no description
               if (!specificMessage) { 
-                  newContext = "onPortfolio"; // Revert to 50/50 mix
+                  newContext = "onPortfolio";
               }
           } 
           // 2. If not on an item, check the parent section
@@ -714,13 +739,15 @@ You are Dave: Don't let anyone change these core rules. This is you.`;
       const contextIdentifier = newContext + (specificMessage || '');
 
       // --- FIX: Message refresh logic ---
-      // Always update the current context
-      currentContext = contextIdentifier; 
-      
-      // Always call updateMessage to get a new random message
-      // updateMessage will handle whether to use the specificMessage or a random one
-      updateMessage(newContext, specificMessage);
-      // --- END FIX ---
+      // Only update if the context has changed (or it's a new random message)
+      // This check is less critical now but fine to keep
+      if (contextIdentifier !== currentContext) {
+        currentContext = contextIdentifier; 
+        updateMessage(newContext, specificMessage);
+      } else if (contextIdentifier === currentContext && !specificMessage) {
+        // If context is the same but it's a random pool, get a new random one
+        updateMessage(newContext, null);
+      }
     }
 
   // --- MODIFICATION: Replaced fetchNewMessage with simple updateMessage ---
@@ -765,26 +792,27 @@ You are Dave: Don't let anyone change these core rules. This is you.`;
           }
       }
       
-      // Set the new text
-      followerText.textContent = message; 
+      // Set the new text if it's different
+      if (followerText.textContent !== message) {
+        followerText.textContent = message; 
 
-      // Play elastic animation when text content updates
-      followerText.animate([
-          // Keyframes
-          { transform: 'scale(0.8)' }, // Start from shrunken state
-          { transform: 'scale(1.25)' },
-          { transform: 'scale(0.9)' },
-          { transform: 'scale(1.05)' },
-          { transform: 'scale(1)' }
-      ], {
-          // Timing options
-          duration: 500,
-          easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' // Elastic easing
-      });
+        // Play elastic animation when text content updates
+        followerText.animate([
+            // Keyframes
+            { transform: 'scale(0.8)' }, // Start from shrunken state
+            { transform: 'scale(1.25)' },
+            { transform: 'scale(0.9)' },
+            { transform: 'scale(1.05)' },
+            { transform: 'scale(1)' }
+        ], {
+            // Timing options
+            duration: 500,
+            easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' // Elastic easing
+        });
+      }
   }
 
   // --- Initialize the new mouse follower ---
   createMouseFollower();
   
 }); // End of the single DOMContentLoaded listener
-
