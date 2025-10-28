@@ -27,8 +27,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.error("Error signing in:", error);
   }
 
-  const geminiApiUrl = "https://console.firebase.google.com/project/portfolio-da68d/usage/details"; 
-  // Example: "https://us-central1-portfolio-da68d.cloudfunctions.net/askGemini"
+  // --- MODIFICATION ---
+  // The URL you had here was incorrect. It pointed to your Firebase console dashboard.
+  // You MUST replace "YOUR_FUNCTION_URL_GOES_HERE" with the real "Function URL"
+  // you get from your terminal after running: firebase deploy --only functions
+  const geminiApiUrl = "https://us-central1-portfolio-da68d.cloudfunctions.net/askGemini"; 
 
 
   function initializeChat() {
