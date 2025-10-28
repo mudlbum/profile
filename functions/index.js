@@ -1,41 +1,44 @@
-/*
-* This is the code for your Firebase Cloud Function.
-* It lives in the `functions/index.js` file.
-*/
+// Import v2 functions
+const {onRequest} = require("firebase-functions/v2/https");
+// Import the new way to define parameters
+const {defineString} = require("firebase-functions/params");
 
-const functions = require("firebase-functions");
 const axios = require("axios");
-const cors = require("cors")({ origin: true });
 
-// This is your new secure endpoint
-exports.askGemini = functions.https.onRequest((req, res) => {
-  // Use cors to handle security rules
-  cors(req, res, async () => {
+// Define the API key as a parameter.
+// The function will look for an environment variable named 'GEMINI_KEY'.
+// This variable is set by your new .env.portfolio-da68d file during deploy.
+const geminiApiKey = defineString("GEMINI_KEY");
+
+exports.askGemini = onRequest(
+  // Set CORS options for v2. This allows your website to call the function.
+  // It allows your GitHub page, your local test server, and the Firebase emulator.
+  { cors: [/mudlbum\.github\.io$/, /127\.0\.0\.1:5500$/, /localhost:5000$/] },
+  
+  async (request, response) => {
     try {
-      // 1. Get the secret API key from Firebase configuration
-      const geminiApiKey = functions.config().gemini.key;
+      // Access the API key's value
+      const apiKey = geminiApiKey.value();
 
-      // 2. This is the official Gemini API URL
-      const geminiApiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${geminiApiKey}`;
-
-      // 3. Get the message history ('contents') from the website's request
-      const contents = req.body.contents;
-
-      if (!contents) {
-        res.status(400).send("Error: 'contents' are missing from the request body.");
-        return;
+      if (!apiKey) {
+        throw new Error("API key is not set. Set the GEMINI_KEY environment variable in your .env file and redeploy.");
       }
 
-      // 4. Call the Gemini API from the server, adding the secret key
-      const geminiResponse = await axios.post(geminiApiUrl, {
-        contents: contents,
-      });
+      // The Gemini API URL
+      const geminiApiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+      
+      const payload = request.body; // Get the payload from the client
+      
+      // Call the Gemini API
+      const apiResponse = await axios.post(geminiApiUrl, payload);
+      
+      // Send the response from Gemini back to the client
+      response.json(apiResponse.data);
 
-      // 5. Send the response from Gemini back to your website
-      res.status(200).send(geminiResponse.data);
     } catch (error) {
-      console.error("Error calling Gemini API:", error.response ? error.response.data : error.message);
-      res.status(500).send("Error: Could not get a response from the AI.");
+      console.error("Error calling Gemini API:", error.message);
+      response.status(500).send(`Error: Could not process your request. ${error.message}`);
     }
-  });
-});
+  }
+);
+
