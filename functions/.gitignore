@@ -1,2 +1,4 @@
 node_modules/
 *.local
+.env
+.env.portfolio-da68d
